@@ -1,5 +1,8 @@
 
---- Titulo, pensar
+--- Titulo, pensar en un nombre para la app ---
+--- Por ejemplo SSIoT (Seguridad y Sostenibilidad en dispositivos IoT) ---
+--- Por ejemplo ADIoTSS (Análisis de dispositivos IoT en base a su seguridad y sostenibilidad) ---
+--- Por ejemplo CSSIoT (Comparador de seguridad y sostenibilidad en dispositivos IoT) ---
 análisis/recomendador/comparador
 de dispositivos IoT
 en base a su seguridad y sostenibilidad 
@@ -20,7 +23,6 @@ Tendrá pestañas para
     - Buscador
     - Favoritos
     - Recomendador (si se pone aparte)
-
 
 
 - Listado de dispositivos
