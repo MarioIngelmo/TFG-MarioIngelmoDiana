@@ -31,30 +31,37 @@ public class EscanearFragment extends Fragment implements DecoratedBarcodeView.T
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Creo la view para la actividad principal con el xml correspondiente
         View view = inflater.inflate(R.layout.fragment_escanear, container, false);
 
+        // Selecciono el indice para remarcar en el menú lateral
         int selectedMenuIndex = GlobalState.getInstance().getSelectedMenuIndex();
         // Resaltar el ítem correspondiente en el menú lateral
         NavigationView navigationView = getActivity().findViewById(R.id.navigation_view);
         navigationView.setCheckedItem(selectedMenuIndex);
 
+        // Compruebo que tenga los permisos de la cámara y sino los solicito para poder utilizarla
         if (androidx.core.content.ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED && androidx.core.content.ContextCompat.checkSelfPermission(getContext(),
                 Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            String permisos[] = {Manifest.permission.CAMERA};
+            String[] permisos = {Manifest.permission.CAMERA};
             ActivityCompat.requestPermissions(getActivity(), permisos, 0);
         }
 
+        // Creo el Barcode Scanner y pongo un texto para guiar al usuario
         barcodeScannerView = view.findViewById(R.id.barcode_scanner);
         barcodeScannerView.setTorchListener(this);
         barcodeScannerView.setStatusText("Por favor, escanea el código de barras");
 
+        // Esto es temporal para comprobar que el lector funciona
         TextView toolTitle = getActivity().findViewById(R.id.toolbar_title);
 
+        // Aqui gestiono la lectura de un codigo de barras indicandole que una vez lee uno ya está
         barcodeScannerView.decodeContinuous(new BarcodeCallback() {
             @Override
             public void barcodeResult(BarcodeResult result) {
                 codigoBarras = result.getText();
+                // Esto tambien es temporal
                 toolTitle.setText(codigoBarras);
                 // Detiene la lectura
                 onDestroy();

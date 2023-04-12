@@ -16,7 +16,7 @@
         android:theme="@style/Theme.HapiSecurity"
         tools:targetApi="33">
         <activity
-            android:name=".activities.menuLateral.MenuInicialActivity"
+            android:name=".activities.menu_lateral.MenuInicialActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

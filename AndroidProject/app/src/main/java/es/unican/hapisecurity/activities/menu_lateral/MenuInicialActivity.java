@@ -1,6 +1,7 @@
-package es.unican.hapisecurity.activities.menuLateral;
+package es.unican.hapisecurity.activities.menu_lateral;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.TextView;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,13 +43,18 @@ public class MenuInicialActivity extends AppCompatActivity {
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle); // Agregar listener antes de sincronizar
         actionBarDrawerToggle.syncState(); // Sincronizar después de agregar listener
+        // Hago que por defecto se abra el buscador
         seleccionarOpcionMenu(R.id.nav_buscador);
     }
 
+    /**
+     * Método que sirve para cambiar entre los diferentes fragmentos del menú lateral
+     * @param itemId entero que contiene el id del fragmento a cambiar
+     */
     public void seleccionarOpcionMenu(int itemId) {
-        GlobalState.getInstance().setSelectedMenuIndex(itemId);
         Fragment fragment = null;
         TextView titulo = findViewById(R.id.toolbar_title);
+        // Selecciono con el id el fragment correspondiente y lo creo
         switch (itemId) {
             case R.id.nav_buscador:
                 fragment = new BuscadorFragment();
@@ -69,6 +75,9 @@ public class MenuInicialActivity extends AppCompatActivity {
             default:
                 finish();
         }
+        // Actualizo el indice global para tener el cambio
+        GlobalState.getInstance().setSelectedMenuIndex(itemId);
+        // Abro el fragment correspondiente cambiándolo por el anterior
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         assert fragment != null;
@@ -78,11 +87,13 @@ public class MenuInicialActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // Compruebo si el menú lateral está abierto o no para poder cerrarlo sin cerrar la aplicación entera
+        if (keyCode == KeyEvent.KEYCODE_BACK && drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
+            return true;
         } else {
-            super.onBackPressed();
+            return super.onKeyDown(keyCode, event);
         }
     }
 

@@ -15,8 +15,10 @@ public class BuscadorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Creo la view para la actividad principal con el xml correspondiente
         View view = inflater.inflate(R.layout.fragment_buscador, container, false);
 
+        // Selecciono el indice para remarcar en el menú lateral
         int selectedMenuIndex = GlobalState.getInstance().getSelectedMenuIndex();
         // Resaltar el ítem correspondiente en el menú lateral
         NavigationView navigationView = getActivity().findViewById(R.id.navigation_view);

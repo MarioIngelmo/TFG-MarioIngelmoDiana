@@ -34,7 +34,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"
             android:gravity="center"
-            android:text="¡Gracias por compartir la aplicación!"
+            android:text="@string/gracias_compartir"
             android:textColor="#000000"
             android:textSize="34sp" />
 
