@@ -41,6 +41,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+    // ZXing para leer los codigos de barras
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+
+
     // GSON for json serialization/deserialization
     implementation 'com.google.code.gson:gson:2.9.0'
 
@@ -55,4 +59,7 @@ dependencies {
 
     // picasso (for image loading from URL)
     implementation 'com.squareup.picasso:picasso:2.8'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }

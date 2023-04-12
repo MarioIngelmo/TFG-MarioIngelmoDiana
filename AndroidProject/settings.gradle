@@ -10,6 +10,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://raw.github.com/zxing/zxing/maven/maven-repo/com/google/zxing" }
     }
 }
 rootProject.name = "Hapi Security"

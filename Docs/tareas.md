@@ -1,11 +1,5 @@
 
---- Titulo, pensar en un nombre para la app ---
---- Por ejemplo SSIoT (Seguridad y Sostenibilidad en dispositivos IoT) ---
---- Por ejemplo ADIoTSS (Análisis de dispositivos IoT en base a su seguridad y sostenibilidad) ---
---- Por ejemplo CSSIoT (Comparador de seguridad y sostenibilidad en dispositivos IoT) ---
-análisis/recomendador/comparador
-de dispositivos IoT
-en base a su seguridad y sostenibilidad 
+--- Titulo: Hapi Security ---
 
 
 - Lo primero ver cómo hacer el backend 
