@@ -84,7 +84,7 @@ dependencies {
 
     // ZXing para leer los codigos de barras
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
-    
+
     // GSON for json serialization/deserialization
     implementation 'com.google.code.gson:gson:2.9.0'
 
