@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+    <ImageView
+        android:id="@+id/ivFotoDisp"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="ImagenDispositivo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:gravity="center"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ivFotoDisp"
+        app:layout_constraintTop_toTopOf="@+id/ivFotoDisp"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor = "?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSeg"
+        app:layout_constraintStart_toEndOf="@+id/ivFotoDisp"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvTitSeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:gravity="center"
+        android:text="Seguridad:"
+        android:textColor = "?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFotoDisp"
+        app:layout_constraintStart_toEndOf="@+id/ivFotoDisp" />
+
+    <TextView
+        android:id="@+id/tvSeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:gravity="center"
+        android:textColor = "?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFotoDisp"
+        app:layout_constraintStart_toEndOf="@+id/tvTitSeg"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvTitSost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Sostenibilidad:"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ivFotoDisp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitSeg" />
+
+    <TextView
+        android:id="@+id/tvSost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:gravity="center"
+        android:textColor = "?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitSost"
+        app:layout_constraintStart_toEndOf="@+id/tvTitSost"
+        tools:text="TextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
