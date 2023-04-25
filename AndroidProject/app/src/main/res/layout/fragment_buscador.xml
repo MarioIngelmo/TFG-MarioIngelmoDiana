@@ -27,15 +27,11 @@
 
         </com.google.android.material.appbar.MaterialToolbar>
 
-        <TextView
-            android:id="@+id/buscador"
+        <SearchView
+            android:id="@+id/svBuscador"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="BUSCADOR"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false" />
 
         <ListView
             android:id="@+id/lvDispositivos"
