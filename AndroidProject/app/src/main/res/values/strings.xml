@@ -24,10 +24,11 @@
     <string name="favorito_dispositivo">Favorito</string>
     <string-array name="categorias_array">
         <item>Todas</item>
-        <item>Portátiles</item>
-        <item>Ordenadores</item>
         <item>Móviles</item>
-        <item>Tablets</item>
-        <item>Dispositivos IoT</item>
+        <item>Asistente Virtual</item>
+        <item>Iluminacion</item>
+        <item>Climatizacion</item>
+        <item>Electrodomesticos Inteligentes</item>
+        <item>Limpieza</item>
     </string-array>
 </resources>

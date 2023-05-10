@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.navigation.NavigationView;
 import es.unican.hapisecurity.R;
-import es.unican.hapisecurity.activities.buscador.BuscadorFragment;
+import es.unican.hapisecurity.activities.buscador.BuscadorView;
 import es.unican.hapisecurity.activities.compartir.CompartirFragment;
 import es.unican.hapisecurity.activities.escanear.EscanearFragment;
 import es.unican.hapisecurity.activities.favoritos.FavoritosFragment;
@@ -57,7 +57,7 @@ public class MenuInicialActivity extends AppCompatActivity {
         // Selecciono con el id el fragment correspondiente y lo creo
         switch (itemId) {
             case R.id.nav_buscador:
-                fragment = new BuscadorFragment();
+                fragment = new BuscadorView();
                 titulo.setText(R.string.menu_buscador);
                 break;
             case R.id.nav_escanear:

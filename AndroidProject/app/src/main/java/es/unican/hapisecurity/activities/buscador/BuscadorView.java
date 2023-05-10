@@ -21,8 +21,10 @@ import java.util.Arrays;
 import es.unican.hapisecurity.R;
 import es.unican.hapisecurity.common.GlobalState;
 
-public class BuscadorFragment extends Fragment {
+public class BuscadorView extends Fragment implements IBuscadorContract.View {
 
+    private IBuscadorContract.Presenter presenter;
+    private View view;
     private String categoriaSeleccionada = "Todas";
     private String categoriaTemporal = "Todas";
     private int valorSeguridad = 0;
@@ -35,9 +37,18 @@ public class BuscadorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Creo la view para la actividad principal con el xml correspondiente
         View view = inflater.inflate(R.layout.fragment_buscador, container, false);
+        this.view = view;
 
+        presenter = new BuscadorPresenter(this);
+
+        this.init();
+        return view;
+    }
+
+    public void init() {
         // Selecciono el indice para remarcar en el menú lateral
         int selectedMenuIndex = GlobalState.getInstance().getSelectedMenuIndex();
+
         // Resaltar el ítem correspondiente en el menú lateral
         NavigationView navigationView = getActivity().findViewById(R.id.navigation_view);
         navigationView.setCheckedItem(selectedMenuIndex);
@@ -50,7 +61,7 @@ public class BuscadorFragment extends Fragment {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                // Realizar la búsqueda aquí
+                // TODO
                 return false;
             }
 
@@ -58,10 +69,7 @@ public class BuscadorFragment extends Fragment {
             public boolean onQueryTextChange(String newText) {
                 return false;
             }
-
         });
-
-        return view;
     }
 
     private void showFilterDialog() {
@@ -146,17 +154,22 @@ public class BuscadorFragment extends Fragment {
 
         Button botonCancelar = dialogView.findViewById(R.id.boton_cancelar);
         Button botonAplicar = dialogView.findViewById(R.id.boton_aplicar);
-        botonCancelar.setOnClickListener(v -> {
-            dialog.dismiss(); // Cierra el diálogo
-        });
-        botonAplicar.setOnClickListener(v -> {
-            categoriaSeleccionada = categoriaTemporal; // Da el valor de Categoria
-            valorSeguridad = valorSeguridadTemporal; // Da el valor de Seguridad
-            valorSostenibilidad = valorSostenibilidadTemporal; // Da el valor de Sostenibilidad
-            dialog.dismiss(); // Cierra el diálogo
-        });
+        botonCancelar.setOnClickListener(v -> presenter.cancelarFiltros(dialog));
+        botonAplicar.setOnClickListener(v -> presenter.aplicarFiltros(dialog, categoriaTemporal, valorSeguridadTemporal, valorSostenibilidadTemporal));
 
         dialog.show();
+    }
+
+    @Override
+    public void cierraDialogo(AlertDialog dialog) {
+        dialog.dismiss();
+    }
+
+    @Override
+    public void guardaValorFiltros(String categoriaTemporal, int valorSeguridadTemporal, String valorSostenibilidadTemporal) {
+        categoriaSeleccionada = categoriaTemporal;
+        valorSeguridad = valorSeguridadTemporal;
+        valorSostenibilidad = valorSostenibilidadTemporal;
     }
 
 }
