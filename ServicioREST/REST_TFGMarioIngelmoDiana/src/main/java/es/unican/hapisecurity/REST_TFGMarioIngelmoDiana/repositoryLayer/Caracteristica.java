@@ -1,28 +1,30 @@
 package es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.repositoryLayer;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
 public class Caracteristica {
 	
 	@Id
-	private String id;
+	@GeneratedValue
+	private Long id;
 	private String texto;
 	
 	public Caracteristica() { }
 
-	public Caracteristica(String id, String texto) {
+	public Caracteristica(Long id, String texto) {
 		super();
 		this.id = id;
 		this.texto = texto;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

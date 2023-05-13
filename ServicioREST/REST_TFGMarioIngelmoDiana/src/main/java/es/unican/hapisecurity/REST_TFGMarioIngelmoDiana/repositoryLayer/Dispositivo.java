@@ -4,31 +4,40 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Dispositivo {
 	
 	@Id
 	private String id;
-	private byte[] imagen;
+	private String urlImagen;
 	private String nombre;
 	private Categoria categoria;
 	private String precio;
 	private double seguridad;
 	private String sostenibilidad;
-	private List<Categoria> listaPositivaSeguridad;
-	private List<Categoria> listaNegativaSeguridad;
-	private List<Categoria> listaPositivaSostenibilidad;
-	private List<Categoria> listaNegativaSostenibilidad;
+	@ManyToMany
+	// TODO
+	private List<Caracteristica> listaPositivaSeguridad;
+	@ManyToMany
+	// TODO
+	private List<Caracteristica> listaNegativaSeguridad;
+	@ManyToMany
+	// TODO
+	private List<Caracteristica> listaPositivaSostenibilidad;
+	@ManyToMany
+	// TODO
+	private List<Caracteristica> listaNegativaSostenibilidad;
 	
 	public Dispositivo () { }
 
-	public Dispositivo(String id, byte[] imagen, String nombre, Categoria categoria, String precio, double seguridad,
-			String sostenibilidad, List<Categoria> listaPositivaSeguridad, List<Categoria> listaNegativaSeguridad,
-			List<Categoria> listaPositivaSostenibilidad, List<Categoria> listaNegativaSostenibilidad) {
+	public Dispositivo(String id, String urlImagen, String nombre, Categoria categoria, String precio, double seguridad,
+			String sostenibilidad, List<Caracteristica> listaPositivaSeguridad, List<Caracteristica> listaNegativaSeguridad,
+			List<Caracteristica> listaPositivaSostenibilidad, List<Caracteristica> listaNegativaSostenibilidad) {
 		super();
 		this.id = id;
-		this.imagen = imagen;
+		this.urlImagen = urlImagen;
 		this.nombre = nombre;
 		this.categoria = categoria;
 		this.precio = precio;
@@ -48,12 +57,12 @@ public class Dispositivo {
 		this.id = id;
 	}
 
-	public byte[] getImagen() {
-		return imagen;
+	public String getUrlImagen() {
+		return urlImagen;
 	}
 
-	public void setImagen(byte[] imagen) {
-		this.imagen = imagen;
+	public void setUrlImagen(String urlImagen) {
+		this.urlImagen = urlImagen;
 	}
 
 	public String getNombre() {
@@ -96,35 +105,35 @@ public class Dispositivo {
 		this.sostenibilidad = sostenibilidad;
 	}
 
-	public List<Categoria> getListaPositivaSeguridad() {
+	public List<Caracteristica> getListaPositivaSeguridad() {
 		return listaPositivaSeguridad;
 	}
 
-	public void setListaPositivaSeguridad(List<Categoria> listaPositivaSeguridad) {
+	public void setListaPositivaSeguridad(List<Caracteristica> listaPositivaSeguridad) {
 		this.listaPositivaSeguridad = listaPositivaSeguridad;
 	}
 
-	public List<Categoria> getListaNegativaSeguridad() {
+	public List<Caracteristica> getListaNegativaSeguridad() {
 		return listaNegativaSeguridad;
 	}
 
-	public void setListaNegativaSeguridad(List<Categoria> listaNegativaSeguridad) {
+	public void setListaNegativaSeguridad(List<Caracteristica> listaNegativaSeguridad) {
 		this.listaNegativaSeguridad = listaNegativaSeguridad;
 	}
 
-	public List<Categoria> getListaPositivaSostenibilidad() {
+	public List<Caracteristica> getListaPositivaSostenibilidad() {
 		return listaPositivaSostenibilidad;
 	}
 
-	public void setListaPositivaSostenibilidad(List<Categoria> listaPositivaSostenibilidad) {
+	public void setListaPositivaSostenibilidad(List<Caracteristica> listaPositivaSostenibilidad) {
 		this.listaPositivaSostenibilidad = listaPositivaSostenibilidad;
 	}
 
-	public List<Categoria> getListaNegativaSostenibilidad() {
+	public List<Caracteristica> getListaNegativaSostenibilidad() {
 		return listaNegativaSostenibilidad;
 	}
 
-	public void setListaNegativaSostenibilidad(List<Categoria> listaNegativaSostenibilidad) {
+	public void setListaNegativaSostenibilidad(List<Caracteristica> listaNegativaSostenibilidad) {
 		this.listaNegativaSostenibilidad = listaNegativaSostenibilidad;
 	}
 
