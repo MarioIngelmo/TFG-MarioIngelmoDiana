@@ -2,43 +2,52 @@ package es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.repositoryLayer;
 
 import java.util.List;
 
+import jakarta.validation.constraints.Size;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Dispositivo {
-	
+
 	@Id
 	private String id;
 	private String urlImagen;
 	private String nombre;
+	private String marca;
+	
+	@Size(max = 750)
+	private String descripcion;
 	private Categoria categoria;
 	private String precio;
 	private double seguridad;
 	private String sostenibilidad;
-	@ManyToMany
-	// TODO
-	private List<Caracteristica> listaPositivaSeguridad;
-	@ManyToMany
-	// TODO
-	private List<Caracteristica> listaNegativaSeguridad;
-	@ManyToMany
-	// TODO
-	private List<Caracteristica> listaPositivaSostenibilidad;
-	@ManyToMany
-	// TODO
-	private List<Caracteristica> listaNegativaSostenibilidad;
-	
-	public Dispositivo () { }
 
-	public Dispositivo(String id, String urlImagen, String nombre, Categoria categoria, String precio, double seguridad,
-			String sostenibilidad, List<Caracteristica> listaPositivaSeguridad, List<Caracteristica> listaNegativaSeguridad,
+	@ManyToMany
+	private List<Caracteristica> listaPositivaSeguridad;
+
+	@ManyToMany
+	private List<Caracteristica> listaNegativaSeguridad;
+
+	@ManyToMany
+	private List<Caracteristica> listaPositivaSostenibilidad;
+
+	@ManyToMany
+	private List<Caracteristica> listaNegativaSostenibilidad;
+
+	public Dispositivo() {
+	}
+
+	public Dispositivo(String id, String urlImagen, String nombre, String marca, String descripcion,
+			Categoria categoria, String precio, double seguridad, String sostenibilidad,
+			List<Caracteristica> listaPositivaSeguridad, List<Caracteristica> listaNegativaSeguridad,
 			List<Caracteristica> listaPositivaSostenibilidad, List<Caracteristica> listaNegativaSostenibilidad) {
 		super();
 		this.id = id;
 		this.urlImagen = urlImagen;
 		this.nombre = nombre;
+		this.marca = marca;
+		this.descripcion = descripcion;
 		this.categoria = categoria;
 		this.precio = precio;
 		this.seguridad = seguridad;
@@ -71,6 +80,22 @@ public class Dispositivo {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public Categoria getCategoria() {

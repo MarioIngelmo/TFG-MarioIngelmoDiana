@@ -6,13 +6,14 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Caracteristica {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
 	private String texto;
-	
-	public Caracteristica() { }
+
+	public Caracteristica() {
+	}
 
 	public Caracteristica(Long id, String texto) {
 		super();

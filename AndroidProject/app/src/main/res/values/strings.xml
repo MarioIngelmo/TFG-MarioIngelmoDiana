@@ -24,7 +24,6 @@
     <string name="favorito_dispositivo">Favorito</string>
     <string-array name="categorias_array">
         <item>Todas</item>
-        <item>Móviles</item>
         <item>Asistente Virtual</item>
         <item>Iluminacion</item>
         <item>Climatizacion</item>
