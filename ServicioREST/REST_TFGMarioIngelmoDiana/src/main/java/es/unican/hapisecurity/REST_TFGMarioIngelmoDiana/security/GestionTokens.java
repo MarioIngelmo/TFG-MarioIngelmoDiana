@@ -6,21 +6,24 @@ import java.util.Date;
 
 import javax.crypto.spec.SecretKeySpec;
 
+import org.springframework.stereotype.Service;
+
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.xml.bind.DatatypeConverter;
 
+@Service
 public class GestionTokens {
 
 	private static final String SECRET_KEY = "A56BYHGWDSG2391DKZFREGER34T9GRG349T5G83BETR3Y5GE";
 	private static Key keyGenerada;
 
-	private static final String NOMBRE = "Mario";
-	private static final String CONTRA = "ContraTFG";
+	private static final String NOMBRE = "mario";
+	private static final String CONTRA = "ContraRESTTFG";
 
-	public static String generaToken(String nombre, String contra) {
+	public String generaToken(String nombre, String contra) {
 		String token = null;
 		if (nombre.equals(NOMBRE) && contra.equals(CONTRA)) {
 			Key signingKey = new SecretKeySpec(DatatypeConverter.parseBase64Binary(SECRET_KEY),
@@ -37,7 +40,7 @@ public class GestionTokens {
 		return token;
 	}
 
-	public static boolean validaToken(String token) {
+	public boolean validaToken(String token) {
 		try {
 			Jwts.parserBuilder().setSigningKey(keyGenerada).build().parseClaimsJws(token);
 			return true;

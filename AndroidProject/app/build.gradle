@@ -89,9 +89,8 @@ dependencies {
     // GSON for json serialization/deserialization
     implementation 'com.google.code.gson:gson:2.9.0'
 
-    // Retrofit (for REST API access) https://square.github.io/retrofit/
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    // OKHttp para llamadas al servicio REST
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
 
     // Room (for database)
     def room_version = "2.4.0"

@@ -59,8 +59,7 @@ public class GeneralService {
 	}
 
 	public Caracteristica creaCaracteristica(Caracteristica d) {
-		Optional<Caracteristica> optional = repositorioCaracteristicas.findById(d.getId());
-		if (!optional.isEmpty())
+		if (d.getId() != null)
 			return null;
 		return repositorioCaracteristicas.saveAndFlush(d);
 	}

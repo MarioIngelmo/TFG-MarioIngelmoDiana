@@ -2,31 +2,31 @@ package es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.security;
 
 public class Credenciales {
 	
-	private String nombre;
-	private String contra;
+	private String usuario;
+	private String clave;
 	
 	public Credenciales() { }
 
-	public Credenciales(String nombre, String contra) {
+	public Credenciales(String usuario, String clave) {
 		super();
-		this.nombre = nombre;
-		this.contra = contra;
+		this.usuario = usuario;
+		this.clave = clave;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
-	public String getContra() {
-		return contra;
+	public String getClave() {
+		return clave;
 	}
 
-	public void setContra(String contra) {
-		this.contra = contra;
+	public void setClave(String clave) {
+		this.clave = clave;
 	}
 
 }

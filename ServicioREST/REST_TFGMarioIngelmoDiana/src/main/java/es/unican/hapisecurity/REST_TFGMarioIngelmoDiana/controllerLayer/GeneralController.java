@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,29 +23,38 @@ import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.repositoryLayer.Caracter
 import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.repositoryLayer.Categoria;
 import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.repositoryLayer.Dispositivo;
 import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.serviceLayer.GeneralService;
-import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.security.Credenciales;
-import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.security.GestionTokens;
-import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.security.Seguridad;
+import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.security.*;
 
 @RestController
-@RequestMapping("/REST_TFGMarioIngelmoDiana")
+@RequestMapping("REST_TFGMarioIngelmoDiana")
 public class GeneralController {
+	
+	@Autowired
+	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	private UserDetailsServiceImpl usuarioDetailsService;
+	
+	@Autowired
+	private GestionTokens gestion;
 
 	@Autowired
 	private GeneralService servicio;
 
 	/**
-	 * Hacer para añadir y quitar características de un dispositivo concreto
+	 * RESPUESTA DE PATRI AÑADIR / QUITAR DE LAS LISTAS CARACTERISTICAS
 	 */
-
+	
 	@PostMapping("/token")
 	public ResponseEntity<String> getToken(@RequestBody Credenciales c) {
 		if (c == null) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		} else {
-			String token = GestionTokens.generaToken(c.getNombre(), c.getContra());
+			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(c.getUsuario(), c.getClave()));
+			usuarioDetailsService.loadUserByUsername(c.getUsuario());
+			String token = gestion.generaToken(c.getUsuario(), c.getClave());
 			if (token == null) {
-				return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+				return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 			} else {
 				return ResponseEntity.ok(token);
 			}
@@ -85,7 +96,6 @@ public class GeneralController {
 	}
 
 	@PutMapping("/dispositivos/{id}")
-	@Seguridad
 	public ResponseEntity<Dispositivo> creaDispositivo(@PathVariable String id, @RequestBody Dispositivo d) {
 		if (!d.getId().equals(id))
 			return ResponseEntity.status(HttpStatus.CONFLICT).build();
@@ -97,7 +107,6 @@ public class GeneralController {
 	}
 
 	@PutMapping("/dispositivos/{id}/imagen")
-	@Seguridad
 	public ResponseEntity<Dispositivo> cambiaImagenDispositivo(@PathVariable String id, @RequestBody String urlNueva) {
 		Dispositivo d = servicio.dispositivoPorId(id);
 		if (d == null) {
@@ -130,7 +139,6 @@ public class GeneralController {
 	}
 
 	@PostMapping("/caracteristicas")
-	@Seguridad
 	public ResponseEntity<Caracteristica> creaCaracteristica(@RequestBody Caracteristica c) {
 		Caracteristica creado = servicio.creaCaracteristica(c);
 		if (creado == null)

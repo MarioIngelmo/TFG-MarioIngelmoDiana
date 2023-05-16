@@ -3,16 +3,10 @@ R
 "app/src/main/res/values/dimens.xml,c\3\c3c1811dec2dbad2deeafb9aad505ca9631da740
 „
 Tapp/src/main/java/es/unican/hapisecurity/activities/favoritos/FavoritosFragment.java,e\9\e9ddb9bd3a7ed33e02b062cce35935c957f21784
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 p
 @app/src/main/java/es/unican/hapisecurity/common/GlobalState.java,8\4\84678fa3396202eb6d93f9aa06f9bdf84d74b55d
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 „
 Tapp/src/main/java/es/unican/hapisecurity/activities/compartir/CompartirFragment.java,7\0\70511b835484d88971fb91c36f84faa86683eb8b
-‚
-Rapp/src/main/java/es/unican/hapisecurity/activities/escanear/EscanearFragment.java,a\a\aa85bf6723d073d0c74295c316a2053dae0cabe5
 ‰
 Yapp/src/main/java/es/unican/hapisecurity/activities/menu_lateral/MenuInicialActivity.java,d\3\d3fb10474fbfbc0a3803121402a1c844b1e5f018
 ~
@@ -21,3 +15,15 @@ Napp/src/main/java/es/unican/hapisecurity/activities/buscador/BuscadorView.java
 Sapp/src/main/java/es/unican/hapisecurity/activities/buscador/BuscadorPresenter.java,4\4\4489aa073a9bf476141a0edba7f9d1eed7196b06
 ƒ
 Sapp/src/main/java/es/unican/hapisecurity/activities/buscador/IBuscadorContract.java,0\b\0b75b7a3445df7dcc7fc1a9ecfe60c9a1cfd99dd
+‚
+Rapp/src/main/java/es/unican/hapisecurity/activities/escanear/EscanearFragment.java,a\a\aa85bf6723d073d0c74295c316a2053dae0cabe5
+t
+Dapp/src/main/java/es/unican/hapisecurity/repository/Dispositivo.java,9\4\94c6432592553311ae8c36d893b432cc9c19cad8
+w
+Gapp/src/main/java/es/unican/hapisecurity/repository/Caracteristica.java,f\3\f3e8578d52d8a5f6bb934755de7d4fd629d053d1
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+
+Oapp/src/main/java/es/unican/hapisecurity/repository/REST/DispositivoGetter.java,e\7\e7df6c9ab68b5255cb4756c7ecdb21ea77024643
