@@ -1,7 +1,0 @@
-
-u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯®û98‚µØ«‚1
-s	java:S116	"RRename this field "URIBase" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Îà ûÿÿÿÿ8ˆµØ«‚1
-ž
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¤Ó¦¹8‰µØ«‚1
-M
-java:S1068	"+Remove this unused "URIBase" private field.(•Îà ûÿÿÿÿ8”µØ«‚1

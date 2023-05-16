@@ -1,0 +1,6 @@
+
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯®û98şÜ‰µ‚1
+|
+java:S1450"ZRemove the "textoAPIURL" field and declare it as a local variable in the relevant methods.(„€ÎÒøÿÿÿÿ8Êİ‰µ‚1
+i
+java:S1871""LThis branch's code block is the same as the block for the branch on line 28.(éËÄê8ùİ‰µ‚1

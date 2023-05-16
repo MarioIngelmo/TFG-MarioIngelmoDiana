@@ -8,18 +8,25 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Arrays;
+import java.util.List;
 
 import es.unican.hapisecurity.R;
 import es.unican.hapisecurity.common.GlobalState;
+import es.unican.hapisecurity.common.Red;
+import es.unican.hapisecurity.common.Dispositivo;
+import es.unican.hapisecurity.repository.DispositivosRepository;
+import es.unican.hapisecurity.repository.IDispositivosRepository;
 
 public class BuscadorView extends Fragment implements IBuscadorContract.View {
 
@@ -39,7 +46,12 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
         View view = inflater.inflate(R.layout.fragment_buscador, container, false);
         this.view = view;
 
-        presenter = new BuscadorPresenter(this);
+        if (Red.isNetworkAvailable(this.getContext())) {
+            presenter = new BuscadorPresenter(this, categoriaSeleccionada, String.valueOf(valorSeguridad), valorSostenibilidad, true);
+        } else {
+            presenter = new BuscadorPresenter(this, categoriaSeleccionada, String.valueOf(valorSeguridad), valorSostenibilidad, false);
+        }
+
 
         this.init();
         return view;
@@ -70,6 +82,11 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
                 return false;
             }
         });
+    }
+
+    @Override
+    public IDispositivosRepository getRepositorioDispositivos() {
+        return new DispositivosRepository(this.getContext());
     }
 
     private void showFilterDialog() {
@@ -170,6 +187,25 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
         categoriaSeleccionada = categoriaTemporal;
         valorSeguridad = valorSeguridadTemporal;
         valorSostenibilidad = valorSostenibilidadTemporal;
+    }
+
+    @Override
+    public void showDispositivos(List<Dispositivo> dispositivos) {
+        DispositivosArrayAdapter adapter = new DispositivosArrayAdapter(this.getContext(), dispositivos);
+        ListView listMostrarDispositivos = view.findViewById(R.id.lvDispositivos);
+        listMostrarDispositivos.setAdapter(adapter);
+    }
+
+    @Override
+    public void showErrorRed() {
+        String text = "No se han podido cargar los dispositivos por falta de red";
+        Toast.makeText(this.getContext(), text, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showErrorServidor() {
+        String text = "No se han podido cargar dispositivos";
+        Toast.makeText(this.getContext(), text, Toast.LENGTH_LONG).show();
     }
 
 }
