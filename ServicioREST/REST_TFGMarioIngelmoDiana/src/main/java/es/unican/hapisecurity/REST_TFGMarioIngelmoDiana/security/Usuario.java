@@ -3,13 +3,13 @@ package es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.security;
 import java.util.Set;
 
 public class Usuario {
-	
+
 	private String username;
-	private String password; 
+	private String password;
 	private Set<String> roles;
-	
+
 	public Usuario() {
-		
+
 	}
 
 	public Usuario(String username, String password, Set<String> roles) {

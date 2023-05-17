@@ -194,22 +194,19 @@ class LoadDatabase {
 			malasSostenibilidad.add(caractMalaSostenibilidad7);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("1",
-					"https://drive.google.com/file/d/1Po1Ca_TG_WsFNxzbELwi4V4idS9yoPTF/view?usp=share_link",
-					"Amazon Echo", "Amazon",
+					"https://i.ibb.co/fQZkNBv/Amazon-Echo.jpg", "Amazon Echo", "Amazon",
 					"El Echo Dot es un altavoz inteligente que se controla con la voz y que usa el Alexa Voice Service. Gracias a su diseño, es ideal para cualquier habitación. Simplemente pídele música, las noticias o información. También puedes llamar a cualquiera que tenga un dispositivo Echo, la app Alexa o Skype, así como controlar dispositivos de Hogar digital con la voz.",
 					Categoria.Asistente_Virtual, "30", 70, "B", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("3",
-					"https://drive.google.com/file/d/1AwOYpUUjf25uXBXTywRg617JQbNIHpdB/view?usp=share_link",
-					"Google Home", "Google",
+					"https://i.ibb.co/drP2b3z/Google-Home.jpg", "Google Home", "Google",
 					"Google Home es un dispositivo de asistencia digital y altavoz inteligente desarrollado por Google, que forma parte del ecosistema de domótica y tecnología de la compañía. Este dispositivo utiliza el Asistente de Google, un potente sistema de inteligencia artificial (IA), para interactuar con los usuarios mediante comandos de voz y realizar tareas específicas.",
 					Categoria.Asistente_Virtual, "70", 75, "A", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("6",
-					"https://drive.google.com/file/d/1ymzov4PwhMfuZI9N2DLWBHMZD1j-dAHX/view?usp=share_link",
-					"Apple HomePod", "Apple",
+					"https://i.ibb.co/n1BK55s/Apple-Home-Pod.jpg", "Apple HomePod", "Apple",
 					"El HomePod es un altavoz revolucio­nario, capaz de adaptarse al lugar donde lo pongas para ofrecer siempre un sonido de alta fidelidad. Junto con Apple Music y Siri, te trae una nueva forma de descubrir y escuchar música en casa. Además, te ayuda con las tareas cotidianas y te permite controlar la domótica del hogar solo con la voz.",
 					Categoria.Asistente_Virtual, "350", 80, "A", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
@@ -232,8 +229,7 @@ class LoadDatabase {
 			buenasSostenibilidad.add(caractBuenaSostenibilidad6);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("2",
-					"https://drive.google.com/file/d/1g2GKy9JGDtnqApoJJa0N4bLpkZXiOMwA/view?usp=share_link",
-					"Amazon Echo 4", "Amazon",
+					"https://i.ibb.co/L5WRtCG/Amazon-Echo4.jpg", "Amazon Echo 4", "Amazon",
 					"Un dispositivo redondo. El Echo combina sonido de alta calidad, un controlador de Hogar digital Zigbee integrado y un sensor de temperatura. Los potentes altavoces ofrecen agudos claros, medios dinámicos y graves profundos, lo que genera un sonido intenso y rico en detalles que se adapta a cualquier estancia. Simplemente pídele a Alexa que ponga música, responda a preguntas, haga llamadas, narre las noticias, relate los resultados deportivos, te informe de la previsión del tiempo y más.",
 					Categoria.Asistente_Virtual, "70", 80, "C", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
@@ -242,20 +238,17 @@ class LoadDatabase {
 			malasSeguridad.add(caractMalaSeguridad9);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("4",
-					"https://drive.google.com/file/d/1FPsAEyftK3H3iKWRD7YLld-riLx7D_JJ/view?usp=share_link",
-					"Google Nest Mini", "Google",
+					"https://i.ibb.co/rvCwq54/Google-Nest-Mini.jpg", "Google Nest Mini", "Google",
 					"2ª generación de Nest Mini, el altavoz que puedes controlar con tu voz. Solo tienes que decir \"Ok Google\" para reproducir tu música preferida de Spotify, YouTube Music y otras plataformas. La música suena más nítida, con mayor calidad y con más potencia que antes. Pídele ayuda a tu Asistente de Google y pregúntale por el tiempo, las noticias y por casi todo lo que se te ocurra: lo mejor de Google está a tu alcance. Puedes escuchar tu agenda personalizada, información sobre tus desplazamientos habituales y tus recordatorios. También puedes configurar temporizadores y alarmas, e incluso encender las luces.",
 					Categoria.Asistente_Virtual, "25", 70, "B", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("5",
-					"https://drive.google.com/file/d/11WW1Lht3brvfr7lfokjyKqip9xxGExOp/view?usp=share_link",
-					"Google Nest Hub Max", "Google",
+					"https://i.ibb.co/gSrKfwg/Google-Nest-Hub-Max.jpg", "Google Nest Hub Max", "Google",
 					"Con Asistente de Google, el Google Nest Hub Max ayuda a que tu familia se mantenga en contacto y concentrada en sus tareas. Deja mensajes de video y realiza videollamadas. Monitorea tu casa cuando no estés en ella con la Nest Cam integrada. Comparte recordatorios y tareas pendientes. Cada usuario puede ver su propio calendario, sus viajes diarios y mucho más con solo un vistazo. Además, disfruta de Google Fotos, YouTube TV, videos y música en la pantalla HD de 10\" con bocinas estéreo.",
 					Categoria.Asistente_Virtual, "75", 55, "D", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("7",
-					"https://drive.google.com/file/d/1HIs9-rovcwOBRUG711iH7rZRZzQKlf4N/view?usp=share_link",
-					"Apple HomePod Mini", "Apple",
+					"https://i.ibb.co/txbmTyK/Apple-Home-Pod-Mini.jpg", "Apple HomePod Mini", "Apple",
 					"Si te impresiona la domótica y te gustaría llevar tu casa a otro nivel más tecnológico, no dudes en hacerte con este producto. Consigue un sonido mejorado de alta fidelidad en casa a la vez que recibes ayuda con las tareas cotidianas y controlas la domótica de tu hogar solo con la voz gracias al altavoz inteligente Apple HomePod mini en color gris espacial. Con conectividad Wi-Fi y Bluetooth, no habrá nada que se le resista.",
 					Categoria.Asistente_Virtual, "110", 60, "C", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
@@ -283,8 +276,7 @@ class LoadDatabase {
 			malasSostenibilidad.add(caractMalaSostenibilidad7);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("8",
-					"https://drive.google.com/file/d/1HoQ-e5ZUYIgSUbZE_xImGOhzjvAXGrAj/view?usp=share_link", "LG WK7",
-					"LG",
+					"https://i.ibb.co/BTPsQH2/LGWK7.jpg", "LG WK7", "LG",
 					"El Altavoz LG WK7 con tecnología Meridian es un gran salto adelante. Una auténtica experiencia de sonido excepcional combinada con la inteligencia artificial para mejorar tu experiencia acústica. Utiliza tu voz para gestionar sin esfuerzo tu día a día con el asistente personal de Google. Controla a través de él otros dispositivos que conecten con el asistente como luces, lavadoras, enchufes inteligentes y mucho más.",
 					Categoria.Asistente_Virtual, "150", 40, "F", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
@@ -292,8 +284,7 @@ class LoadDatabase {
 			malasSeguridad.remove(caractMalaSeguridad10);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("9",
-					"https://drive.google.com/file/d/1f4DANLNVkjzL1SPPj1KGJpVWvQqBewyn/view?usp=share_link",
-					"Lenovo Smart Clock", "Lenovo",
+					"https://i.ibb.co/fNyHMF8/Lenovo-Smart-Clock.jpg", "Lenovo Smart Clock", "Lenovo",
 					"El Lenovo Smart Clock con el Asistente de Google hace mucho más que decirte la hora y despertarte. Está diseñado para reducir el tiempo que dedicas a consultar la pantalla de tu teléfono por la noche, lo que te ayudará a relajarte y dormir mejor. También puede gestionar los dispositivos inteligentes de tu hogar, reproducir tu música favorita en toda la casa, organizar tu agenda y mucho más. Todo sin usar las manos, rápida y fácilmente. Solo tienes que decir « Ok Google» para empezar.",
 					Categoria.Asistente_Virtual, "150", 40, "F", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
@@ -322,15 +313,13 @@ class LoadDatabase {
 			malasSostenibilidad.add(caractMalaSostenibilidad7);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("10",
-					"https://drive.google.com/file/d/1tYlItgzD9-skkn7LZLdQgGmq2naJGhLq/view?usp=share_link",
-					"Philips Hue", "Philips",
+					"https://i.ibb.co/1rCqLdt/Philips-Hue.jpg", "Philips Hue", "Philips",
 					"Experimenta la iluminación inteligente con solo presionar un botón con las luces Bluetooth de Philips Hue y crea el ambiente perfecto para tu hogar en muy poco tiempo. Controla la luz en una habitación a través de la aplicación Hue Bluetooth y elige entre 16 millones de colores y varios tonos blancos.",
 					Categoria.Iluminacion, "72", 80, "A", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("12",
-					"https://drive.google.com/file/d/1Zfprp3kAyomPnjSB2n-YCUNlmxFLScVh/view?usp=share_link",
-					"LIFX Color", "LIFX",
+					"https://i.ibb.co/nnTb66B/LIFX.jpg", "LIFX Color", "LIFX",
 					"1100 lúmenes: ¡Ultra brillante! Pero también regulable a través de voz o aplicación.Color completo: 550 mil millones de pasos de color posibles. LED RGBW para colores más ricos y enorme gama blanca de 1500-9000 K.Diseño industrial icónico: la forma única mantiene la distribución de la luz de toda la habitación y se ve genial en colgantes y accesorios expuestos.",
 					Categoria.Iluminacion, "40", 75, "A", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
@@ -349,15 +338,13 @@ class LoadDatabase {
 			buenasSostenibilidad.remove(caractBuenaSostenibilidad8);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("11",
-					"https://drive.google.com/file/d/1xAfGg6HV3oWyeJHBfhssuCHXI992wUfG/view?usp=share_link",
-					"Philips Hue Starter Kit", "Philips",
+					"https://i.ibb.co/2K10Ycd/Philips-Hue-Starter-Pack.jpg", "Philips Hue Starter Kit", "Philips",
 					"Añade color ambiental a cualquier habitación con el kit de inicio E27 de Philips Hue White and Color Ambiance. Conecta con el Hue Bridge que se incluye para aprovechar la interminable lista de funcionalidades. Contrólalo mediante la aplicación, la voz o los interruptores incluidos.",
 					Categoria.Iluminacion, "150", 85, "A", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("13",
-					"https://drive.google.com/file/d/1k1zP-lRFo27gFKjCfNzQSC0LBFT9gPz-/view?usp=share_link",
-					"LIFX Mini White", "LIFX",
+					"https://i.ibb.co/C69R7zW/LIFXMini-White.jpg", "LIFX Mini White", "LIFX",
 					"LIFX Mini White es una luz blanca compacta diseñada para ser la luz perfecta de todos los días. Esta luz inteligente básica moderniza la experiencia de iluminación de su hogar mediante su conectividad con la aplicación LIFX. Ya sea encendiendo una sola luz o regulando toda una red, cada una de las luces integra tecnología Wi-Fi para conseguir conexiones uniformes y sin complicaciones con las principales plataformas y dispositivos de casas inteligentes.",
 					Categoria.Iluminacion, "27", 70, "C", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
@@ -370,8 +357,7 @@ class LoadDatabase {
 			malasSeguridad.add(caractMalaSeguridad9);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("14",
-					"https://drive.google.com/file/d/17hWuqC9inWRo0pAoNJXMTFbQf1VfuMqy/view?usp=share_link",
-					"Yeelight Smart LED Bulb", "Yeelight",
+					"https://i.ibb.co/vjc1df7/Yeelight.jpg", "Yeelight Smart LED Bulb", "Yeelight",
 					"La bombilla inteligente Yeelight 1S funciona con sus plataformas domésticas inteligentes favoritas como Amazon Alexa, Google Assistant, Apple Homekit. Yeelight 1S con 16 millones de colores y 1700-6500K regulable, establece el ambiente adecuado para cualquier momento ajustando la temperatura del color de blanco cálido a luz diurna.",
 					Categoria.Iluminacion, "33", 55, "D", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
@@ -396,29 +382,25 @@ class LoadDatabase {
 			buenasSostenibilidad.add(caractBuenaSostenibilidad8);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("15",
-					"https://drive.google.com/file/d/1mGPXKTUaz0gbiJS9jVIecNorfYY31TZl/view?usp=share_link",
-					"Nest Thermostat", "Google",
+					"https://i.ibb.co/VScKVdN/Nest.jpg", "Nest Thermostat", "Google",
 					"Todo es sencillo con Nest Thermostat E. Es fácil de usar: no hace falta programar nada. Puedes subir o bajar la temperatura desde cualquier lugar con la aplicación Nest. Ahorrar energía es fácil. Además, se instala fácilmente sin ayuda.",
 					Categoria.Climatizacion, "170", 80, "A", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("17",
-					"https://drive.google.com/file/d/1_a7sY9_j4QUK4RN9RJTpA79UxgPzOnSS/view?usp=share_link",
-					"Ecobbe SmartThermostat", "Ecobee",
+					"https://i.ibb.co/g4VgVrB/Ecobee.jpg", "Ecobbe SmartThermostat", "Ecobee",
 					"El nuevo termostato inteligente mejorado de ecobee te ofrece ahorro de energía automático y se adapta a tu estilo de vida ajustando la temperatura según la ocupación, sugiriendo cambios de horario y optimizando tu ahorro de energía. Eco+ viene con características que reducen automáticamente las temperaturas cuando estás fuera o dormido. Funciona con tu dispositivo inteligente o Apple Watch y se conecta a tu sistema de hogar inteligente como Apple HomeKit, Amazon Alexa, Google Assistant, SmartThings e IFTTT.",
 					Categoria.Climatizacion, "220", 75, "A", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("18",
-					"https://drive.google.com/file/d/1izAdCNwpUBMX-WCO8ewDBwY2OeOo2-Lt/view?usp=share_link",
-					"Samsung Family Hub Refrigerator", "Samsung",
+					"https://i.ibb.co/Jjyjx44/Samsung-Refrigerator.jpg", "Samsung Family Hub Refrigerator", "Samsung",
 					"Transforma tu vida con el nuevo frigorífico inteligente de Samsung. El frigorífico americano Family Hub RS6HA8880S9 te ayudará a hacer la compra y a que no se te caduque los alimentos, podrás escuchar música mientras cocinas o ver tu serie favorita en su pantalla táctil, tener el horario de toda la familia a mano y dejarles mensajes.",
 					Categoria.Electrodomesticos_Inteligentes, "1500", 75, "A", buenasSeguridad, malasSeguridad,
 					buenasSostenibilidad, malasSostenibilidad)));
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("19",
-					"https://drive.google.com/file/d/1lGHHmr2SRMk5S9KNzeKGhSi5naPRqISo/view?usp=share_link",
-					"LG InstaView ThinQ Range", "LG",
+					"https://i.ibb.co/pW9N0tj/LGRefrigerator.png", "LG InstaView ThinQ Range", "LG",
 					"Controla tu frigorífico estés donde estés y con sistema de autodiagnóstico. Con LG ThinQ® puedes controlar de forma remota todas las funciones principales del frigorífico. Enciende 'Express Freeze' con solo tocar un botón. Compatible con Asistente de Google. Haz toc toc en su puerta de cristal para ver el interior. Conserva los alimentos frescos durante más tiempo. LINEARCooling reduce las fluctuaciones de temperatura, conservando tus alimentos frescos pasados 7 días.",
 					Categoria.Electrodomesticos_Inteligentes, "2000", 70, "B", buenasSeguridad, malasSeguridad,
 					buenasSostenibilidad, malasSostenibilidad)));
@@ -438,8 +420,7 @@ class LoadDatabase {
 			buenasSostenibilidad.add(caractBuenaSostenibilidad);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("16",
-					"https://drive.google.com/file/d/1QNxX0mmK-Ev8HruheRk99EZYBy3NLuvQ/view?usp=share_link",
-					"Nest Learning Thermostat", "Google",
+					"https://i.ibb.co/f20BvVH/Nest-Learning.jpg", "Nest Learning Thermostat", "Google",
 					"Se programa solo. Ahorra energía. Descubre el Nest Learning Thermostat de 3.ª generación. Tiene aros nuevos y una pantalla grande y nítida. Y puede controlar el agua caliente. El termostato Nest se adapta automáticamente a los cambios de tu vida. Solo tienes que usarlo durante una semana y se programará automáticamente.",
 					Categoria.Climatizacion, "230", 90, "A", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
@@ -460,15 +441,13 @@ class LoadDatabase {
 			buenasSostenibilidad.add(caractBuenaSostenibilidad);
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("20",
-					"https://drive.google.com/file/d/1bP7XD8mkb-nqCHKKc5PHVpF_iNDIr4Ly/view?usp=share_link",
-					"iRobot Roomba i7+", "iRobot",
+					"https://i.ibb.co/7nDfNw6/IRobot-Roomba.jpg", "iRobot Roomba i7+", "iRobot",
 					"Roomba® i7+ ofrece una aspiración de alta potencia 10 veces superior y una inteligencia única que le permite aprende de tu hogar y tus rutinas de limpieza para proporcionarte el máximo control. Incluso podrás iniciar la limpieza con una simple orden a tu asistente de voz. Además, tu robot vacía automáticamente su depósito para que te olvides de la suciedad o el polvo durante meses.",
 					Categoria.Limpieza, "600", 85, "A", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));
 
 			log.info("Preloading " + repositoryDispositivos.save(new Dispositivo("21",
-					"https://drive.google.com/file/d/1ToVmszzi_bAKvWj8V1EjDRIQxGmldDHI/view?usp=share_link",
-					"Neato Botvac D7", "Neato",
+					"https://i.ibb.co/pJCDrfh/Neato-Botvac.jpg", "Neato Botvac D7", "Neato",
 					"El aspirador Neato Botvac D7 ha sido diseñado para eliminar el polvo, el pelo, el pelo de mascotas y los agentes alérgenos de tu suelo. Para ello, cuenta con la tecnología LaserSmart que mapea y memoriza tu hogar. De esta manera, navega por el suelo sin problemas y es 2 veces más rápido, incluso en la oscuridad. Este robot aspirador Neato también dispone de la tecnología CornerClever y una forma en D que lo hacen más potente para aspirar. Con su autonomía de 120 minutos, el aspirador D703 puede limpiar superficies muy grandes. Es capaz de darle la vuelta solo a su base si necesita ser recargado, antes de volver a colocarlo donde se dejó parado.",
 					Categoria.Limpieza, "450", 85, "A", buenasSeguridad, malasSeguridad, buenasSostenibilidad,
 					malasSostenibilidad)));

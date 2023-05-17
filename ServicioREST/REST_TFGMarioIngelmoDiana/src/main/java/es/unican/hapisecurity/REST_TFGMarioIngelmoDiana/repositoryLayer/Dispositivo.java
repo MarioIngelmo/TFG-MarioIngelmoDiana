@@ -15,7 +15,7 @@ public class Dispositivo {
 	private String urlImagen;
 	private String nombre;
 	private String marca;
-	
+
 	@Size(max = 750)
 	private String descripcion;
 	private Categoria categoria;

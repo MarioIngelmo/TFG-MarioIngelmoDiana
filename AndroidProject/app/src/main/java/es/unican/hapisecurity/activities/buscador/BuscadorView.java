@@ -1,6 +1,7 @@
 package es.unican.hapisecurity.activities.buscador;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,12 +47,11 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
         View view = inflater.inflate(R.layout.fragment_buscador, container, false);
         this.view = view;
 
-        if (Red.isNetworkAvailable(this.getContext())) {
+        if (Red.isNetworkAvailable(this.requireContext())) {
             presenter = new BuscadorPresenter(this, categoriaSeleccionada, String.valueOf(valorSeguridad), valorSostenibilidad, true);
         } else {
             presenter = new BuscadorPresenter(this, categoriaSeleccionada, String.valueOf(valorSeguridad), valorSostenibilidad, false);
         }
-
 
         this.init();
         return view;
@@ -82,6 +82,15 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
                 return false;
             }
         });
+
+        // Manejar cada vez que se pinche en un dispositivo
+        ListView lvDispositivos = view.findViewById(R.id.lvDispositivos);
+        lvDispositivos.setOnItemClickListener((parent, view, position, id) ->
+                presenter.onDispositivoClicked(position)
+        );
+
+        TextView textErrorDispositivos = view.findViewById(R.id.tvErrorDispositivos);
+        textErrorDispositivos.setText("No hay dispositivos con estas características");
     }
 
     @Override
@@ -103,7 +112,7 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
 
     @Override
     public void showDispositivos(List<Dispositivo> dispositivos) {
-        DispositivosArrayAdapter adapter = new DispositivosArrayAdapter(this.getContext(), dispositivos);
+        DispositivosArrayAdapter adapter = new DispositivosArrayAdapter(this.requireContext(), dispositivos);
         ListView listMostrarDispositivos = view.findViewById(R.id.lvDispositivos);
         listMostrarDispositivos.setAdapter(adapter);
     }
@@ -118,6 +127,13 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
     public void showErrorServidor() {
         String text = "No se han podido cargar dispositivos";
         Toast.makeText(this.getContext(), text, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void openDispositivoDetails(Dispositivo dispositivo) {
+        //Intent intent = new Intent(this, GasolineraDetailView.class);
+        //intent.putExtra(GasolineraDetailView.INTENT_GASOLINERA, gasolinera);
+        //startActivity(intent);
     }
 
     private void showFilterDialog() {

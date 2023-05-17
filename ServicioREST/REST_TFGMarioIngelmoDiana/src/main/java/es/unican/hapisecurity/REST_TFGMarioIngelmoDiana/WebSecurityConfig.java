@@ -26,13 +26,11 @@ public class WebSecurityConfig {
 	@Bean
 	SecurityFilterChain web(HttpSecurity http) throws Exception {
 		http.csrf().disable()
-				.authorizeHttpRequests((authorize) -> authorize
-						.requestMatchers("/REST_TFGMarioIngelmoDiana/token").permitAll()
-						.requestMatchers(HttpMethod.GET, "/**").permitAll()
-						.requestMatchers(HttpMethod.POST, "/**").hasRole("ADMIN")
-						.requestMatchers(HttpMethod.PUT, "/**").hasRole("ADMIN")
-						.requestMatchers(HttpMethod.DELETE, "/**").hasRole("ADMIN")
-						.anyRequest().authenticated())
+				.authorizeHttpRequests((authorize) -> authorize.requestMatchers("/REST_TFGMarioIngelmoDiana/token")
+						.permitAll().requestMatchers(HttpMethod.GET, "/**").permitAll()
+						.requestMatchers(HttpMethod.POST, "/**").hasRole("ADMIN").requestMatchers(HttpMethod.PUT, "/**")
+						.hasRole("ADMIN").requestMatchers(HttpMethod.DELETE, "/**").hasRole("ADMIN").anyRequest()
+						.authenticated())
 				.cors(withDefaults()).addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
 				.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 

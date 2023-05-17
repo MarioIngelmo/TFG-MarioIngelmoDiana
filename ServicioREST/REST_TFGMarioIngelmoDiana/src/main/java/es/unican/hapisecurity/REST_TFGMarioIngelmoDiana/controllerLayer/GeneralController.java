@@ -30,13 +30,13 @@ import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.security.*;
 @RestController
 @RequestMapping("REST_TFGMarioIngelmoDiana")
 public class GeneralController {
-	
+
 	@Autowired
 	private AuthenticationManager authenticationManager;
-	
+
 	@Autowired
 	private UserDetailsServiceImpl usuarioDetailsService;
-	
+
 	@Autowired
 	private GestionTokens gestion;
 
@@ -46,7 +46,7 @@ public class GeneralController {
 	/**
 	 * RESPUESTA DE PATRI AÑADIR / QUITAR DE LAS LISTAS CARACTERISTICAS
 	 */
-	
+
 	@PostMapping("/token")
 	public ResponseEntity<String> getToken(@RequestBody Credenciales c) {
 		if (c == null) {

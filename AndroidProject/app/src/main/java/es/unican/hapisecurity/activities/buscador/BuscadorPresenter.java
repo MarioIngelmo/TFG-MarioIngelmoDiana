@@ -13,10 +13,9 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
     private int valorSeguridad = 0;
     private String valorSostenibilidad = "G";
     private IBuscadorContract.View view;
-
     private IDispositivosRepository repositorioDispositivos;
-
     private Boolean red;
+    private List<Dispositivo> dispositivosMostrados;
 
     public BuscadorPresenter(IBuscadorContract.View view, String categoria, String seguridad, String sostenibilidad, Boolean red) {
         this.view = view;
@@ -68,11 +67,19 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
     public void obtenDispositivos(String categoria, String seguridad, String sostenibilidad) {
         List<Dispositivo> dispositivosMostrar = repositorioDispositivos.getDispositivos(categoria, seguridad, sostenibilidad);
         if (dispositivosMostrar != null) {
+            dispositivosMostrados = dispositivosMostrar;
             view.showDispositivos(dispositivosMostrar);
         } else {
             view.showErrorServidor();
         }
+    }
 
+    @Override
+    public void onDispositivoClicked(int index) {
+        if (dispositivosMostrados != null && index < dispositivosMostrados.size()) {
+            Dispositivo dispositivo = dispositivosMostrados.get(index);
+            view.openDispositivoDetails(dispositivo);
+        }
     }
 
 

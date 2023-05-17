@@ -1,11 +1,12 @@
 package es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.security;
 
 public class Credenciales {
-	
+
 	private String usuario;
 	private String clave;
-	
-	public Credenciales() { }
+
+	public Credenciales() {
+	}
 
 	public Credenciales(String usuario, String clave) {
 		super();

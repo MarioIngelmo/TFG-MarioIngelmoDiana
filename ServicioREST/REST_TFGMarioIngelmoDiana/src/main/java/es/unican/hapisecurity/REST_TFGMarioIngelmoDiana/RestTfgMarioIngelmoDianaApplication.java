@@ -9,6 +9,5 @@ public class RestTfgMarioIngelmoDianaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RestTfgMarioIngelmoDianaApplication.class, args);
 	}
-	
 
 }

@@ -22,6 +22,10 @@
     <string name="lista_aspectos_sostenibilidad_dispositivo">Lista Aspectos Sostenibilidad:</string>
     <string name="imagen_del_dispositivo">Imagen del dispositivo</string>
     <string name="favorito_dispositivo">Favorito</string>
+    <string name="filtros">Filtros</string>
+    <string name="seguridad">Seguridad:</string>
+    <string name="sostenibilidad">Sostenibilidad:</string>
+    <string name="imagendispositivo">ImagenDispositivo</string>
     <string-array name="categorias_array">
         <item>Todas</item>
         <item>Asistente Virtual</item>

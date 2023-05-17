@@ -6,7 +6,7 @@ package es.unican.hapisecurity.repository.REST;
 public class DispositivosServiceConstants {
 
     private static final String SERVICIO_API_URL =
-            "http://localhost:8080/";
+            "http://10.0.2.2:8080/";
 
     private DispositivosServiceConstants() {}
 

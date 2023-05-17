@@ -52,6 +52,8 @@ public interface IBuscadorContract {
          * Metodo para crear un toast que indique un error a la hora de cargar dispositivos
          */
         void showErrorServidor();
+
+        void openDispositivoDetails(Dispositivo dispositivo);
     }
     
     interface Presenter {
@@ -90,5 +92,7 @@ public interface IBuscadorContract {
          * @param sostenibilidad sostenibilidad a filtrar
          */
         void obtenDispositivos(String categoria, String seguridad, String sostenibilidad);
+
+        void onDispositivoClicked(int index);
     }
 }
