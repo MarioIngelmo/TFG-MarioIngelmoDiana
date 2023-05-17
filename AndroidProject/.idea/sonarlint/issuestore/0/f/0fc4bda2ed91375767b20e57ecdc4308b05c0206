@@ -1,5 +1,4 @@
 
 n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯®û9
-h
-java:S3008
-"RRename this field "API_URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù‰ÿ«
+m
+java:S3008"RRename this field "API_URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§Ğƒûÿÿÿÿ

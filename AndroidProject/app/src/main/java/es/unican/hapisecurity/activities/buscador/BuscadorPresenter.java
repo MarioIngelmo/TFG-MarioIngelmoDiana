@@ -49,12 +49,18 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
                 && valorSostenibilidad.equals(valorSostenibilidadTemporal)) {
             view.cierraDialogo(dialog);
         } else {
-            categoriaSeleccionada = categoriaTemporal;
+            if (categoriaTemporal.equals("Asistente Virtual")) {
+                categoriaSeleccionada = "Asistente_Virtual";
+            } else if (categoriaTemporal.equals("Electrodomesticos Inteligentes")) {
+                categoriaSeleccionada = "Electrodomesticos_Inteligentes";
+            } else {
+                categoriaSeleccionada = categoriaTemporal;
+            }
             valorSeguridad = valorSeguridadTemporal;
             valorSostenibilidad = valorSostenibilidadTemporal;
             view.guardaValorFiltros(categoriaTemporal, valorSeguridadTemporal, valorSostenibilidadTemporal);
             view.cierraDialogo(dialog);
-            this.obtenDispositivos(categoriaTemporal, String.valueOf(valorSeguridadTemporal), valorSostenibilidadTemporal);
+            this.obtenDispositivos(categoriaSeleccionada, String.valueOf(valorSeguridad), valorSostenibilidad);
         }
     }
 

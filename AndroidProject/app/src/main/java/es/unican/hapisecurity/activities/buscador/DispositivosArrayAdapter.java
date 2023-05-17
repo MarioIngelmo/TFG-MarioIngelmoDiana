@@ -18,6 +18,11 @@ import java.util.List;
 import es.unican.hapisecurity.R;
 import es.unican.hapisecurity.common.Dispositivo;
 
+/**
+ * Clase para adaptar todos los datos de los dispositivos a lo que se quiere mostrar en la lista
+ * de dispositivos que se muestre en la aplicacion.
+ * Solo se muestra imagen, nombre, marca, valor de seguridad y valor de sostenibilidad
+ */
 public class DispositivosArrayAdapter extends ArrayAdapter<Dispositivo> {
 
     public DispositivosArrayAdapter(@NonNull Context context, @NonNull List<Dispositivo> objects) {

@@ -89,6 +89,37 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
         return new DispositivosRepository(this.getContext());
     }
 
+    @Override
+    public void cierraDialogo(AlertDialog dialog) {
+        dialog.dismiss();
+    }
+
+    @Override
+    public void guardaValorFiltros(String categoriaTemporal, int valorSeguridadTemporal, String valorSostenibilidadTemporal) {
+        categoriaSeleccionada = categoriaTemporal;
+        valorSeguridad = valorSeguridadTemporal;
+        valorSostenibilidad = valorSostenibilidadTemporal;
+    }
+
+    @Override
+    public void showDispositivos(List<Dispositivo> dispositivos) {
+        DispositivosArrayAdapter adapter = new DispositivosArrayAdapter(this.getContext(), dispositivos);
+        ListView listMostrarDispositivos = view.findViewById(R.id.lvDispositivos);
+        listMostrarDispositivos.setAdapter(adapter);
+    }
+
+    @Override
+    public void showErrorRed() {
+        String text = "No se han podido cargar los dispositivos por falta de red";
+        Toast.makeText(this.getContext(), text, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showErrorServidor() {
+        String text = "No se han podido cargar dispositivos";
+        Toast.makeText(this.getContext(), text, Toast.LENGTH_LONG).show();
+    }
+
     private void showFilterDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Filtros");
@@ -175,37 +206,6 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
         botonAplicar.setOnClickListener(v -> presenter.aplicarFiltros(dialog, categoriaTemporal, valorSeguridadTemporal, valorSostenibilidadTemporal));
 
         dialog.show();
-    }
-
-    @Override
-    public void cierraDialogo(AlertDialog dialog) {
-        dialog.dismiss();
-    }
-
-    @Override
-    public void guardaValorFiltros(String categoriaTemporal, int valorSeguridadTemporal, String valorSostenibilidadTemporal) {
-        categoriaSeleccionada = categoriaTemporal;
-        valorSeguridad = valorSeguridadTemporal;
-        valorSostenibilidad = valorSostenibilidadTemporal;
-    }
-
-    @Override
-    public void showDispositivos(List<Dispositivo> dispositivos) {
-        DispositivosArrayAdapter adapter = new DispositivosArrayAdapter(this.getContext(), dispositivos);
-        ListView listMostrarDispositivos = view.findViewById(R.id.lvDispositivos);
-        listMostrarDispositivos.setAdapter(adapter);
-    }
-
-    @Override
-    public void showErrorRed() {
-        String text = "No se han podido cargar los dispositivos por falta de red";
-        Toast.makeText(this.getContext(), text, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void showErrorServidor() {
-        String text = "No se han podido cargar dispositivos";
-        Toast.makeText(this.getContext(), text, Toast.LENGTH_LONG).show();
     }
 
 }

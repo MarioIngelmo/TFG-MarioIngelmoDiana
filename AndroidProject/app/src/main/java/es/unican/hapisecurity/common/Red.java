@@ -1,8 +1,5 @@
 package es.unican.hapisecurity.common;
 
-
-
-
 import static android.content.ContentValues.TAG;
 
 import android.content.Context;
@@ -10,6 +7,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.util.Log;
 
+/**
+ * Clase para comprobar si hay red disponible
+ */
 public class Red {
 
     private Red() {

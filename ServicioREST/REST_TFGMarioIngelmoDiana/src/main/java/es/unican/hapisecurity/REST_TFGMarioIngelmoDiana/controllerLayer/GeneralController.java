@@ -22,6 +22,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.repositoryLayer.Caracteristica;
 import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.repositoryLayer.Categoria;
 import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.repositoryLayer.Dispositivo;
+import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.repositoryLayer.ListaCaracteristicas;
+import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.repositoryLayer.ListaDispositivos;
 import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.serviceLayer.GeneralService;
 import es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.security.*;
 
@@ -62,7 +64,7 @@ public class GeneralController {
 	}
 
 	@GetMapping("/dispositivos")
-	public ResponseEntity<List<Dispositivo>> getDispositivos(
+	public ResponseEntity<ListaDispositivos> getDispositivos(
 			@RequestParam(value = "categoria", required = false) String categoria,
 			@RequestParam(value = "seguridad", required = false) String seguridad,
 			@RequestParam(value = "sostenibilidad", required = false) String sostenibilidad) {
@@ -83,7 +85,7 @@ public class GeneralController {
 					.filter(d -> d.getSostenibilidad().matches("[A-" + sostenibilidad.toUpperCase() + "]"))
 					.collect(Collectors.toList());
 		}
-		return ResponseEntity.ok(dispositivos);
+		return ResponseEntity.ok(new ListaDispositivos(dispositivos));
 	}
 
 	@GetMapping("/dispositivos/{id}")
@@ -121,12 +123,12 @@ public class GeneralController {
 	}
 
 	@GetMapping("/caracteristicas")
-	public ResponseEntity<List<Caracteristica>> getCaracteristicas() {
+	public ResponseEntity<ListaCaracteristicas> getCaracteristicas() {
 		List<Caracteristica> caracteristicas = servicio.caracteristicas();
 		if (caracteristicas.isEmpty()) {
 			return ResponseEntity.notFound().build();
 		}
-		return ResponseEntity.ok(caracteristicas);
+		return ResponseEntity.ok(new ListaCaracteristicas(caracteristicas));
 	}
 
 	@GetMapping("/caracteristicas/{id}")

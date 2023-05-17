@@ -1,46 +1,40 @@
 package es.unican.hapisecurity.common;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
+/**
+ * Clase con los atributos de cada dispositivo
+ */
 public class Dispositivo {
 
+    @SerializedName(value="id")
     private String id;
+    @SerializedName(value="urlImagen")
     private String urlImagen;
+    @SerializedName(value="nombre")
     private String nombre;
+    @SerializedName(value="marca")
     private String marca;
-
+    @SerializedName(value="descripcion")
     private String descripcion;
+    @SerializedName(value="categoria")
     private Categoria categoria;
+    @SerializedName(value="precio")
     private String precio;
+    @SerializedName(value="seguridad")
     private double seguridad;
+    @SerializedName(value="sostenibilidad")
     private String sostenibilidad;
+    @SerializedName(value="listaPositivaSeguridad")
     private List<Caracteristica> listaPositivaSeguridad;
+    @SerializedName(value="listaNegativaSeguridad")
     private List<Caracteristica> listaNegativaSeguridad;
+    @SerializedName(value="listaPositivaSostenibilidad")
     private List<Caracteristica> listaPositivaSostenibilidad;
+    @SerializedName(value="listaNegativaSostenibilidad")
     private List<Caracteristica> listaNegativaSostenibilidad;
-
-    public Dispositivo() {
-    }
-
-    public Dispositivo(String id, String urlImagen, String nombre, String marca, String descripcion,
-                       Categoria categoria, String precio, double seguridad, String sostenibilidad,
-                       List<Caracteristica> listaPositivaSeguridad, List<Caracteristica> listaNegativaSeguridad,
-                       List<Caracteristica> listaPositivaSostenibilidad, List<Caracteristica> listaNegativaSostenibilidad) {
-        super();
-        this.id = id;
-        this.urlImagen = urlImagen;
-        this.nombre = nombre;
-        this.marca = marca;
-        this.descripcion = descripcion;
-        this.categoria = categoria;
-        this.precio = precio;
-        this.seguridad = seguridad;
-        this.sostenibilidad = sostenibilidad;
-        this.listaPositivaSeguridad = listaPositivaSeguridad;
-        this.listaNegativaSeguridad = listaNegativaSeguridad;
-        this.listaPositivaSostenibilidad = listaPositivaSostenibilidad;
-        this.listaNegativaSostenibilidad = listaNegativaSostenibilidad;
-    }
 
     public String getId() {
         return id;

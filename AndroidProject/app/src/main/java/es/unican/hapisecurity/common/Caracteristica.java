@@ -1,8 +1,15 @@
 package es.unican.hapisecurity.common;
 
+import com.google.gson.annotations.SerializedName;
+
+/**
+ * Clase con los atributos de cada caracteristica
+ */
 public class Caracteristica {
 
+    @SerializedName(value="id")
     private Long id;
+    @SerializedName(value="texto")
     private String texto;
 
     public Caracteristica() {

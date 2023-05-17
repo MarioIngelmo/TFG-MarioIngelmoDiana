@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class DispositivosService {
 
-    private static final long TIMEOUT_SECONDS = 100L;
+    private static final long TIMEOUT_SECONDS = 50L;
 
     private static DispositivosAPI api;
 
@@ -25,13 +25,7 @@ public class DispositivosService {
 
     private static DispositivosAPI getAPI() {
         textoAPIURL = DispositivosServiceConstants.getAPIURL();
-        if (api == null) {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(DispositivosServiceConstants.getAPIURL())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-            api = retrofit.create(DispositivosAPI.class);
-        } else if (!textoAPIURLAntiguo.equals(textoAPIURL)) {
+        if (api == null || !textoAPIURLAntiguo.equals(textoAPIURL)) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(DispositivosServiceConstants.getAPIURL())
                     .addConverterFactory(GsonConverterFactory.create())

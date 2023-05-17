@@ -8,13 +8,11 @@ import es.unican.hapisecurity.common.DispositivosResponse;
 import es.unican.hapisecurity.repository.REST.DispositivosService;
 
 /**
- * Implementation of a gas stations repository.
- * In this case, the gas stations are retrieved from a REST API.
- * The repository also persists into a local DB the retrieved list of gas stations.
+ * Implementación del repositorio del servicio de dispositivos
+ * Desde aquí se hacen las llamadas al servicio REST para obtener los datos buscados,
+ * ya sea una lista de dispositivos o un dispositivo concreto
  */
 public class DispositivosRepository implements IDispositivosRepository {
-
-    private static final String KEY_LAST_SAVED = "KEY_LAST_SAVED";
 
     private final Context context;
 
@@ -24,17 +22,14 @@ public class DispositivosRepository implements IDispositivosRepository {
 
     @Override
     public List<Dispositivo> getDispositivos(String categoria, String seguridad, String sostenibilidad) {
-
         DispositivosResponse response = DispositivosService.getDispositivos(categoria, seguridad, sostenibilidad);
-        List<Dispositivo> dispositivos = response != null ? response.getDispositivos() : null;
-        return dispositivos;
+        return response != null ? response.getDispositivos() : null;
     }
 
     @Override
     public Dispositivo getDispositivoId(String id) {
         DispositivosResponse response = DispositivosService.getDispositivoId(id);
-        Dispositivo dispositivo = response != null ? response.getDispositivos().get(0) : null;
-        return dispositivo;
+        return response != null ? response.getDispositivos().get(0) : null;
     }
 
 }

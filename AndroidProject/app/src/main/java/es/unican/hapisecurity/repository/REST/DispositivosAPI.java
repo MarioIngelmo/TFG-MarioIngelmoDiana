@@ -20,5 +20,4 @@ public interface DispositivosAPI {
     @GET("REST_TFGMarioIngelmoDiana/dispositivos/{id}")
     Call<DispositivosResponse> dispositivoPorId(@Path("id") String id);
 
-
 }
