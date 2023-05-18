@@ -8,7 +8,7 @@
     <string name="menu_favoritos">Favoritos</string>
     <string name="menu_compartir">Compartir</string>
     <string name="compartir">COMPARTIR</string>
-    <string name="action_settings">Configuracion</string>
+    <string name="action_settings">Configuración</string>
     <string name="gracias_compartir">¡Gracias por compartir la aplicación!</string>
     <string name="nombre_dispositivo">Nombre:</string>
     <string name="marca_dispositivo">Marca:</string>
@@ -17,15 +17,17 @@
     <string name="seguridad_dispositivo">Seguridad:</string>
     <string name="sostenibilidad_dispositivo">Sostenibilidad:</string>
     <string name="media_dispositivo">Media:</string>
-    <string name="descripcion_dispositivo">Descripcion:</string>
-    <string name="lista_aspectos_seguridad_dispositivo">Lista Aspectos Seguridad:</string>
-    <string name="lista_aspectos_sostenibilidad_dispositivo">Lista Aspectos Sostenibilidad:</string>
+    <string name="descripcion_dispositivo">Descripción:</string>
+    <string name="lista_aspectos_seguridad_dispositivo">Lista Características Seguridad:</string>
+    <string name="lista_aspectos_sostenibilidad_dispositivo">Lista Características Sostenibilidad:</string>
     <string name="imagen_del_dispositivo">Imagen del dispositivo</string>
     <string name="favorito_dispositivo">Favorito</string>
     <string name="filtros">Filtros</string>
     <string name="seguridad">Seguridad:</string>
     <string name="sostenibilidad">Sostenibilidad:</string>
     <string name="imagendispositivo">ImagenDispositivo</string>
+    <string name="positivas">Positivas:</string>
+    <string name="negativas">Negativas:</string>
     <string-array name="categorias_array">
         <item>Todas</item>
         <item>Asistente Virtual</item>

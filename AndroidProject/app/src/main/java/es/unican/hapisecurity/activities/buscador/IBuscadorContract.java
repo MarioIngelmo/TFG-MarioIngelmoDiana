@@ -84,15 +84,6 @@ public interface IBuscadorContract {
          */
         void aplicarFiltros(AlertDialog dialog, String categoriaTemporal, int valorSeguridadTemporal, String valorSostenibilidadTemporal);
 
-        /**
-         * Metodo que llama al repositorio de dispositivos para obtener la lista de los mismos
-         * segun los filtros indicados
-         * @param categoria categoria a filtrar
-         * @param seguridad seguridad a filtrar
-         * @param sostenibilidad sostenibilidad a filtrar
-         */
-        void obtenDispositivos(String categoria, String seguridad, String sostenibilidad);
-
         void onDispositivoClicked(int index);
     }
 }

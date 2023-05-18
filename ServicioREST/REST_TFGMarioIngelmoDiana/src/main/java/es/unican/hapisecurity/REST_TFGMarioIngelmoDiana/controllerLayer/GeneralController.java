@@ -77,7 +77,7 @@ public class GeneralController {
 					.collect(Collectors.toList());
 		}
 		if (seguridad != null) {
-			dispositivos = dispositivos.stream().filter(d -> d.getSeguridad() >= Double.valueOf(seguridad))
+			dispositivos = dispositivos.stream().filter(d -> d.getSeguridad() >= Integer.valueOf(seguridad))
 					.collect(Collectors.toList());
 		}
 		if (sostenibilidad != null) {

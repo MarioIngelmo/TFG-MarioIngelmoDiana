@@ -1,13 +1,19 @@
 package es.unican.hapisecurity.common;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Clase con los atributos de cada dispositivo
  */
-public class Dispositivo {
+public class Dispositivo implements Serializable {
 
     @SerializedName(value="id")
     private String id;
@@ -24,7 +30,7 @@ public class Dispositivo {
     @SerializedName(value="precio")
     private String precio;
     @SerializedName(value="seguridad")
-    private double seguridad;
+    private int seguridad;
     @SerializedName(value="sostenibilidad")
     private String sostenibilidad;
     @SerializedName(value="listaPositivaSeguridad")
@@ -92,11 +98,11 @@ public class Dispositivo {
         this.precio = precio;
     }
 
-    public double getSeguridad() {
+    public int getSeguridad() {
         return seguridad;
     }
 
-    public void setSeguridad(double seguridad) {
+    public void setSeguridad(int seguridad) {
         this.seguridad = seguridad;
     }
 

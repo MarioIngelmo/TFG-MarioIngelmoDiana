@@ -20,7 +20,7 @@ public class Dispositivo {
 	private String descripcion;
 	private Categoria categoria;
 	private String precio;
-	private double seguridad;
+	private int seguridad;
 	private String sostenibilidad;
 
 	@ManyToMany
@@ -39,7 +39,7 @@ public class Dispositivo {
 	}
 
 	public Dispositivo(String id, String urlImagen, String nombre, String marca, String descripcion,
-			Categoria categoria, String precio, double seguridad, String sostenibilidad,
+			Categoria categoria, String precio, int seguridad, String sostenibilidad,
 			List<Caracteristica> listaPositivaSeguridad, List<Caracteristica> listaNegativaSeguridad,
 			List<Caracteristica> listaPositivaSostenibilidad, List<Caracteristica> listaNegativaSostenibilidad) {
 		super();
@@ -114,11 +114,11 @@ public class Dispositivo {
 		this.precio = precio;
 	}
 
-	public double getSeguridad() {
+	public int getSeguridad() {
 		return seguridad;
 	}
 
-	public void setSeguridad(double seguridad) {
+	public void setSeguridad(int seguridad) {
 		this.seguridad = seguridad;
 	}
 

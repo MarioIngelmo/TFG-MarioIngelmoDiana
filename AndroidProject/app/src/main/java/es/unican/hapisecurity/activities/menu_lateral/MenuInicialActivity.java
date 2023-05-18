@@ -15,7 +15,7 @@ import com.google.android.material.navigation.NavigationView;
 import es.unican.hapisecurity.R;
 import es.unican.hapisecurity.activities.buscador.BuscadorView;
 import es.unican.hapisecurity.activities.compartir.CompartirFragment;
-import es.unican.hapisecurity.activities.escanear.EscanearFragment;
+import es.unican.hapisecurity.activities.escanear.EscanearView;
 import es.unican.hapisecurity.activities.favoritos.FavoritosFragment;
 import es.unican.hapisecurity.common.GlobalState;
 
@@ -61,7 +61,7 @@ public class MenuInicialActivity extends AppCompatActivity {
                 titulo.setText(R.string.menu_buscador);
                 break;
             case R.id.nav_escanear:
-                fragment = new EscanearFragment();
+                fragment = new EscanearView();
                 titulo.setText(R.string.menu_escanear);
                 break;
             case R.id.nav_favoritos:

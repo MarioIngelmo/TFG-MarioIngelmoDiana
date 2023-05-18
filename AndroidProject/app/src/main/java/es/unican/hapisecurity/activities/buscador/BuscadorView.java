@@ -23,6 +23,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import es.unican.hapisecurity.R;
+import es.unican.hapisecurity.activities.dispositivo.DispositivoView;
 import es.unican.hapisecurity.common.GlobalState;
 import es.unican.hapisecurity.common.Red;
 import es.unican.hapisecurity.common.Dispositivo;
@@ -44,8 +45,7 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Creo la view para la actividad principal con el xml correspondiente
-        View view = inflater.inflate(R.layout.fragment_buscador, container, false);
-        this.view = view;
+        this.view = inflater.inflate(R.layout.fragment_buscador, container, false);
 
         if (Red.isNetworkAvailable(this.requireContext())) {
             presenter = new BuscadorPresenter(this, categoriaSeleccionada, String.valueOf(valorSeguridad), valorSostenibilidad, true);
@@ -57,6 +57,7 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
         return view;
     }
 
+    @Override
     public void init() {
         // Selecciono el indice para remarcar en el menú lateral
         int selectedMenuIndex = GlobalState.getInstance().getSelectedMenuIndex();
@@ -88,9 +89,6 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
         lvDispositivos.setOnItemClickListener((parent, view, position, id) ->
                 presenter.onDispositivoClicked(position)
         );
-
-        TextView textErrorDispositivos = view.findViewById(R.id.tvErrorDispositivos);
-        textErrorDispositivos.setText("No hay dispositivos con estas características");
     }
 
     @Override
@@ -112,6 +110,10 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
 
     @Override
     public void showDispositivos(List<Dispositivo> dispositivos) {
+        if (dispositivos.isEmpty()) {
+            TextView textErrorDispositivos = view.findViewById(R.id.tvErrorDispositivos);
+            textErrorDispositivos.setText("No hay dispositivos con estas características");
+        }
         DispositivosArrayAdapter adapter = new DispositivosArrayAdapter(this.requireContext(), dispositivos);
         ListView listMostrarDispositivos = view.findViewById(R.id.lvDispositivos);
         listMostrarDispositivos.setAdapter(adapter);
@@ -131,9 +133,9 @@ public class BuscadorView extends Fragment implements IBuscadorContract.View {
 
     @Override
     public void openDispositivoDetails(Dispositivo dispositivo) {
-        //Intent intent = new Intent(this, GasolineraDetailView.class);
-        //intent.putExtra(GasolineraDetailView.INTENT_GASOLINERA, gasolinera);
-        //startActivity(intent);
+        Intent intent = new Intent(this.getContext(), DispositivoView.class);
+        intent.putExtra(DispositivoView.DISPOSITIVO, dispositivo);
+        startActivity(intent);
     }
 
     private void showFilterDialog() {

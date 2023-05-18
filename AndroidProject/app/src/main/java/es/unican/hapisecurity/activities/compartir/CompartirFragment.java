@@ -40,7 +40,7 @@ public class CompartirFragment extends Fragment {
     private void compartirApp() {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
-        String shareBody = "Unete a mi y descarga HapiSecurity";
+        String shareBody = "Unete a mi y descarga HapiSecurity, repositorio de la aplicación en: https://github.com/MarioIngelmo/TFG-MarioIngelmoDiana";
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Descarga HapiSecurity");
         shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
         startActivity(Intent.createChooser(shareIntent, "Compartir vía"));
