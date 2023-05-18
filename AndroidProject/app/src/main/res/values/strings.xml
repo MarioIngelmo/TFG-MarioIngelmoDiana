@@ -28,6 +28,12 @@
     <string name="imagendispositivo">ImagenDispositivo</string>
     <string name="positivas">Positivas:</string>
     <string name="negativas">Negativas:</string>
+    <string name="categoria">Categoría:</string>
+    <string name="seguridad_text">Seguridad:</string>
+    <string name="sostenibilidad_text">Sostenibilidad:</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aplicar">Aplicar</string>
+    <string name="ordenar">Ordenar:</string>
     <string-array name="categorias_array">
         <item>Todas</item>
         <item>Asistente Virtual</item>
@@ -35,5 +41,10 @@
         <item>Climatizacion</item>
         <item>Electrodomesticos Inteligentes</item>
         <item>Limpieza</item>
+    </string-array>
+    <string-array name="ordenar_array">
+        <item>Alfabetico</item>
+        <item>Seguridad</item>
+        <item>Sostenibilidad</item>
     </string-array>
 </resources>

@@ -21,8 +21,8 @@ public class DispositivosRepository implements IDispositivosRepository {
     }
 
     @Override
-    public List<Dispositivo> getDispositivos(String categoria, String seguridad, String sostenibilidad) {
-        DispositivosResponse response = DispositivosService.getDispositivos(categoria, seguridad, sostenibilidad);
+    public List<Dispositivo> getDispositivos(String categoria, String seguridad, String sostenibilidad, String ordenar) {
+        DispositivosResponse response = DispositivosService.getDispositivos(categoria, seguridad, sostenibilidad, ordenar);
         return response != null ? response.getDispositivos() : null;
     }
 

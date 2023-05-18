@@ -14,7 +14,8 @@ import retrofit2.http.Query;
 public interface DispositivosAPI {
 
     @GET("REST_TFGMarioIngelmoDiana/dispositivos")
-    Call<DispositivosResponse> dispositivos(@Query("categoria") String categoria, @Query("seguridad") String seguridad, @Query("sostenibilidad") String sostenibilidad);
+    Call<DispositivosResponse> dispositivos(@Query("categoria") String categoria, @Query("seguridad")
+        String seguridad, @Query("sostenibilidad") String sostenibilidad, @Query("ordenar") String ordenar);
 
 
     @GET("REST_TFGMarioIngelmoDiana/dispositivos/{id}")

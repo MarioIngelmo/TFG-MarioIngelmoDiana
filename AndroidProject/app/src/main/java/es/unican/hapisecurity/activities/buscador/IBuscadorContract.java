@@ -31,11 +31,13 @@ public interface IBuscadorContract {
 
         /**
          * Metodo para almacenar los filtros seleccionados por el usuario
-         * @param categoriaTemporal categoria seleccionada a guardar
-         * @param valorSeguridadTemporal seguridad seleccionada a guardar
+         *
+         * @param categoriaTemporal           categoria seleccionada a guardar
+         * @param valorSeguridadTemporal      seguridad seleccionada a guardar
          * @param valorSostenibilidadTemporal sostenibilidad seleccionada a guardar
+         * @param ordenarTemporal             ordenamiento seleccionado a guardar
          */
-        void guardaValorFiltros(String categoriaTemporal, int valorSeguridadTemporal, String valorSostenibilidadTemporal);
+        void guardaValorFiltros(String categoriaTemporal, int valorSeguridadTemporal, String valorSostenibilidadTemporal, String ordenarTemporal);
 
         /**
          * Metodo para coger la lista de dispositivos obtenida, adaptarla y mostrarla
@@ -53,6 +55,10 @@ public interface IBuscadorContract {
          */
         void showErrorServidor();
 
+        /**
+         * Metodo para iniciar el activity que muestre el dispositivo completo
+         * @param dispositivo dispositivo a mostrar
+         */
         void openDispositivoDetails(Dispositivo dispositivo);
     }
     
@@ -64,8 +70,9 @@ public interface IBuscadorContract {
          * @param categoria categoria seleccionada que se quiere filtrar
          * @param seguridad seguridad seleccionada que se quiere filtrar
          * @param sostenibilidad sostenibilidad seleccionada que se quiere filtrar
+         * @param ordenar ordenar seleccionado que se quiere usar
          */
-        void init(String categoria, String seguridad, String sostenibilidad);
+        void init(String categoria, String seguridad, String sostenibilidad, String ordenar);
 
         /**
          * Metodo para indicar a la view que cierre el dialog porque no se aplican los filtros
@@ -77,13 +84,25 @@ public interface IBuscadorContract {
          * Metodo para actualizar los filtros, si ningún filtro ha cambiado, solo se indica a la view
          * que cierre el dialog, sino se actualizan los valores indicándoselo a la view, se cargan
          * nuevos dispositivos y se indica a la view que cierre el dialog
-         * @param dialog dialog a cerrar
-         * @param categoriaTemporal categoria seleccionada
-         * @param valorSeguridadTemporal seguridad seleccionada
+         *
+         * @param dialog                      dialog a cerrar
+         * @param categoriaTemporal           categoria seleccionada
+         * @param valorSeguridadTemporal      seguridad seleccionada
          * @param valorSostenibilidadTemporal sostenibilidad seleccionada
+         * @param ordenarTemporal             ordenamiento seleccionado
          */
-        void aplicarFiltros(AlertDialog dialog, String categoriaTemporal, int valorSeguridadTemporal, String valorSostenibilidadTemporal);
+        void aplicarFiltros(AlertDialog dialog, String categoriaTemporal, int valorSeguridadTemporal, String valorSostenibilidadTemporal, String ordenarTemporal);
 
+        /**
+         * Metodo para indicar a la view cuál ha sido el dispositivo pulsado para abrir
+         * @param index indice de la lista en el que se ha pulsado
+         */
         void onDispositivoClicked(int index);
+
+        /**
+         * Metodo para filtrar los dispositivos con el texto del buscador
+         * @param textoBuscar texto que se pone en el buscador
+         */
+        void filtraTexto(String textoBuscar);
     }
 }

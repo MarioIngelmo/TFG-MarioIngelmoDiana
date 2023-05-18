@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginStart="10dp"
-        android:text="Categoría:" />
+        android:text="@string/categoria" />
 
     <Spinner
         android:id="@+id/spinner_categoria"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="Seguridad:" />
+            android:text="@string/seguridad_text" />
 
         <TextView
             android:id="@+id/seguridad_nivel"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="50" />
+            android:text="" />
     </LinearLayout>
 
     <SeekBar
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="Sostenibilidad:" />
+            android:text="@string/sostenibilidad_text" />
 
         <TextView
             android:id="@+id/sostenibilidad_nivel"
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="A" />
+            android:text="" />
     </LinearLayout>
 
     <SeekBar
@@ -79,6 +79,23 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/ordenar_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/ordenar" />
+
+    <Spinner
+        android:id="@+id/spinner_ordenar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:labelFor="@id/ordenar_text" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,7 +110,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="Cancelar" />
+            android:text="@string/cancelar" />
 
         <Button
             android:id="@+id/boton_aplicar"
@@ -103,7 +120,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="Aplicar" />
+            android:text="@string/aplicar" />
 
     </LinearLayout>
 

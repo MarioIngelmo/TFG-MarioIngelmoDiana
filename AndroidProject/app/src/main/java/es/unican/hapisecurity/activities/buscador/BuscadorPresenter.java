@@ -2,6 +2,7 @@ package es.unican.hapisecurity.activities.buscador;
 
 import android.app.AlertDialog;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import es.unican.hapisecurity.common.Dispositivo;
@@ -12,25 +13,26 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
     private String categoriaSeleccionada = "Todas";
     private int valorSeguridad = 0;
     private String valorSostenibilidad = "G";
+    private String ordenarSeleccionado = "Alfabetico";
     private final IBuscadorContract.View view;
     private IDispositivosRepository repositorioDispositivos;
     private final Boolean red;
     private List<Dispositivo> dispositivosMostrados;
 
-    public BuscadorPresenter(IBuscadorContract.View view, String categoria, String seguridad, String sostenibilidad, Boolean red) {
+    public BuscadorPresenter(IBuscadorContract.View view, String categoria, String seguridad, String sostenibilidad, String ordenar, Boolean red) {
         this.view = view;
         this.red = red;
-        this.init(categoria, seguridad, sostenibilidad);
+        this.init(categoria, seguridad, sostenibilidad, ordenar);
     }
 
     @Override
-    public void init(String categoria, String seguridad, String sostenibilidad) {
+    public void init(String categoria, String seguridad, String sostenibilidad, String ordenar) {
         if (repositorioDispositivos == null) {
             repositorioDispositivos = view.getRepositorioDispositivos();
         }
         if (repositorioDispositivos != null) {
             if (Boolean.TRUE.equals(red)) {
-                obtenDispositivos(categoria, seguridad, sostenibilidad);
+                obtenDispositivos(categoria, seguridad, sostenibilidad, ordenar);
             } else {
                 view.showErrorRed();
             }
@@ -43,9 +45,9 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
     }
 
     @Override
-    public void aplicarFiltros(AlertDialog dialog, String categoriaTemporal, int valorSeguridadTemporal, String valorSostenibilidadTemporal) {
+    public void aplicarFiltros(AlertDialog dialog, String categoriaTemporal, int valorSeguridadTemporal, String valorSostenibilidadTemporal, String ordenarTemporal) {
         if (categoriaSeleccionada.equals(categoriaTemporal) && valorSeguridad == valorSeguridadTemporal
-                && valorSostenibilidad.equals(valorSostenibilidadTemporal)) {
+                && valorSostenibilidad.equals(valorSostenibilidadTemporal) && ordenarSeleccionado.equals(ordenarTemporal)) {
             view.cierraDialogo(dialog);
         } else {
             if (categoriaTemporal.equals("Asistente Virtual")) {
@@ -57,9 +59,10 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
             }
             valorSeguridad = valorSeguridadTemporal;
             valorSostenibilidad = valorSostenibilidadTemporal;
-            view.guardaValorFiltros(categoriaTemporal, valorSeguridadTemporal, valorSostenibilidadTemporal);
+            ordenarSeleccionado = ordenarTemporal;
+            view.guardaValorFiltros(categoriaTemporal, valorSeguridadTemporal, valorSostenibilidadTemporal, ordenarTemporal);
             view.cierraDialogo(dialog);
-            this.obtenDispositivos(categoriaSeleccionada, String.valueOf(valorSeguridad), valorSostenibilidad);
+            this.obtenDispositivos(categoriaSeleccionada, String.valueOf(valorSeguridad), valorSostenibilidad, ordenarSeleccionado);
         }
     }
 
@@ -71,8 +74,25 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
         }
     }
 
-    private void obtenDispositivos(String categoria, String seguridad, String sostenibilidad) {
-        List<Dispositivo> dispositivosMostrar = repositorioDispositivos.getDispositivos(categoria, seguridad, sostenibilidad);
+    @Override
+    public void filtraTexto(String textoBuscar) {
+        if (textoBuscar.isBlank()) {
+            obtenDispositivos(categoriaSeleccionada, String.valueOf(valorSeguridad), valorSostenibilidad, ordenarSeleccionado);
+        }
+        if (dispositivosMostrados != null && !dispositivosMostrados.isEmpty()) {
+            List<Dispositivo> dispositivosTexto = new LinkedList<>();
+            for (Dispositivo d : dispositivosMostrados) {
+                if (d.getNombre().toLowerCase().contains(textoBuscar.toLowerCase()) || d.getMarca().toLowerCase().contains(textoBuscar.toLowerCase())) {
+                    dispositivosTexto.add(d);
+                }
+            }
+            dispositivosMostrados = dispositivosTexto;
+            view.showDispositivos(dispositivosTexto);
+        }
+    }
+
+    private void obtenDispositivos(String categoria, String seguridad, String sostenibilidad, String ordenarSeleccionado) {
+        List<Dispositivo> dispositivosMostrar = repositorioDispositivos.getDispositivos(categoria, seguridad, sostenibilidad, ordenarSeleccionado);
         if (dispositivosMostrar != null) {
             dispositivosMostrados = dispositivosMostrar;
             view.showDispositivos(dispositivosMostrar);

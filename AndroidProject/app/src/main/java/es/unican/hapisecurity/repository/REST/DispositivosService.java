@@ -39,13 +39,15 @@ public class DispositivosService {
 
     /**
      * Descarga todos los dispositivos en base a los tres query params que se pasan
-     * @param categoria categoria de los dispositivos que se quieren
-     * @param seguridad seguridad minima que se quiere
+     *
+     * @param categoria      categoria de los dispositivos que se quieren
+     * @param seguridad      seguridad minima que se quiere
      * @param sostenibilidad sostenibilidad minima que se quiere
+     * @param ordenar        ordenamiento que se quiere
      * @return los dispositivos filtrados por las caracteristicas pasadas
      */
-    public static DispositivosResponse getDispositivos(String categoria, String seguridad, String sostenibilidad) {
-        final Call<DispositivosResponse> call = getAPI().dispositivos(categoria, seguridad, sostenibilidad);
+    public static DispositivosResponse getDispositivos(String categoria, String seguridad, String sostenibilidad, String ordenar) {
+        final Call<DispositivosResponse> call = getAPI().dispositivos(categoria, seguridad, sostenibilidad, ordenar);
         return devolverResponse(call);
     }
 
