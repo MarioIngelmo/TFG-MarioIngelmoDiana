@@ -4,6 +4,8 @@ public interface IDispositivoContract {
 
     interface View {
 
+        void init();
+
         /**
          * Metodo para mostrar los datos del dispositivo
          * @param url url de donde conseguir la imagen
@@ -22,6 +24,10 @@ public interface IDispositivoContract {
         void ponerDatosDispositivo(String url, String nombre, String marca, String categoria, String precio,
                                    String seguridad, String sostenibilidad, String descripcion, String posSeg,
                                    String negSeg, String posSost, String negSost);
+
+        void noEstaDB();
+
+        void siEstaDB();
     }
 
     interface Presenter {
@@ -31,5 +37,7 @@ public interface IDispositivoContract {
          * y se mandan a la view
          */
         void init();
+
+        void anhadeOEliminaFavoritos();
     }
 }

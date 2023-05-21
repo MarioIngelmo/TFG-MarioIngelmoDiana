@@ -1,5 +1,10 @@
 package es.unican.hapisecurity.common;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
@@ -7,27 +12,27 @@ import java.io.Serializable;
 /**
  * Clase con los atributos de cada caracteristica
  */
+@Entity(tableName = "caracteristicas")
 public class Caracteristica implements Serializable {
 
     @SerializedName(value="id")
+    @NonNull
+    @PrimaryKey
     private Long id;
     @SerializedName(value="texto")
+    @ColumnInfo(name = "texto")
     private String texto;
 
     public Caracteristica() {
+        this.id = 0L;
     }
 
-    public Caracteristica(Long id, String texto) {
-        super();
-        this.id = id;
-        this.texto = texto;
-    }
-
+    @NonNull
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(@NonNull Long id) {
         this.id = id;
     }
 

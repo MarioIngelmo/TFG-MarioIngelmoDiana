@@ -2,15 +2,19 @@ package es.unican.hapisecurity.activities.dispositivo;
 
 import es.unican.hapisecurity.common.Caracteristica;
 import es.unican.hapisecurity.common.Dispositivo;
+import es.unican.hapisecurity.repository.db.DispositivosDB;
+import es.unican.hapisecurity.repository.db.IDispositivosDAO;
 
 public class DispositivoPresenter implements IDispositivoContract.Presenter {
 
     private final Dispositivo dispositivo;
     private final IDispositivoContract.View view;
+    private final DispositivosDB db;
 
-    public DispositivoPresenter(IDispositivoContract.View view, Dispositivo d) {
+    public DispositivoPresenter(IDispositivoContract.View view, Dispositivo d, DispositivosDB db) {
         this.view = view;
         this.dispositivo = d;
+        this.db = db;
     }
 
     @Override
@@ -28,8 +32,31 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
         String posSost = getPosSost();
         String negSost = getNegSost();
 
+        this.compruebaDB();
+
         view.ponerDatosDispositivo(url, nombre, marca, categoria, precio, seguridad, sostenibilidad,
                 descripcion, posSeg, negSeg, posSost, negSost);
+    }
+
+    @Override
+    public void anhadeOEliminaFavoritos() {
+        IDispositivosDAO dao = db.dispositivosDAO();
+        if(dao.getDispositivoById(dispositivo.getId()) == null) {
+            dao.insertAll(dispositivo);
+            view.siEstaDB();
+        } else {
+            dao.eliminaDispositivo(dispositivo.getId());
+            view.noEstaDB();
+        }
+    }
+
+    private void compruebaDB() {
+        IDispositivosDAO dao = db.dispositivosDAO();
+        if(dao.getDispositivoById(dispositivo.getId()) == null) {
+            view.noEstaDB();
+        } else {
+            view.siEstaDB();
+        }
     }
 
     private String getUrl() {

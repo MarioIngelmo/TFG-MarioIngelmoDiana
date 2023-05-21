@@ -3,6 +3,7 @@ package es.unican.hapisecurity.activities.dispositivo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,30 +11,41 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.room.Room;
 
 import com.squareup.picasso.Picasso;
 
 import es.unican.hapisecurity.R;
 import es.unican.hapisecurity.common.Dispositivo;
+import es.unican.hapisecurity.repository.db.DispositivosDB;
 
 public class DispositivoView extends AppCompatActivity implements IDispositivoContract.View {
 
     public static final String DISPOSITIVO = "DISPOSITIVO";
+
+    private IDispositivoContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dispositivo_detalle);
         Dispositivo dispositivo = (Dispositivo) getIntent().getExtras().getSerializable(DISPOSITIVO);
-        IDispositivoContract.Presenter presenter = new DispositivoPresenter(this, dispositivo);
-        presenter.init();
+        DispositivosDB db = Room.databaseBuilder(getApplicationContext(), DispositivosDB.class, "dispositivos_db")
+                .allowMainThreadQueries().build();
+        this.presenter = new DispositivoPresenter(this, dispositivo, db);
+        this.init();
+    }
 
+    @Override
+    public void init() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Dispositivo");
         Drawable flechaAtras = ContextCompat.getDrawable(this, R.drawable.ic_flecha_atras);
         getSupportActionBar().setHomeAsUpIndicator(flechaAtras);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ImageView imageFavoritos = findViewById(R.id.ivFavorito);
+        imageFavoritos.setOnClickListener(v -> presenter.anhadeOEliminaFavoritos());
     }
 
     @Override
@@ -83,6 +95,18 @@ public class DispositivoView extends AppCompatActivity implements IDispositivoCo
         tvNegativoSeguridad.setText(negSeg);
         tvPositivoSostenibilidad.setText(posSost);
         tvNegativoSostenibilidad.setText(negSost);
+    }
+
+    @Override
+    public void noEstaDB() {
+        ImageView imageFavoritos = findViewById(R.id.ivFavorito);
+        imageFavoritos.setImageResource(R.drawable.favorito_off);
+    }
+
+    @Override
+    public void siEstaDB() {
+        ImageView imageFavoritos = findViewById(R.id.ivFavorito);
+        imageFavoritos.setImageResource(R.drawable.favorito_on);
     }
 
 }
