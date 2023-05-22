@@ -16,7 +16,7 @@ import es.unican.hapisecurity.R;
 import es.unican.hapisecurity.activities.buscador.BuscadorView;
 import es.unican.hapisecurity.activities.compartir.CompartirFragment;
 import es.unican.hapisecurity.activities.escanear.EscanearView;
-import es.unican.hapisecurity.activities.favoritos.FavoritosFragment;
+import es.unican.hapisecurity.activities.favoritos.FavoritosView;
 import es.unican.hapisecurity.common.GlobalState;
 
 
@@ -65,7 +65,7 @@ public class MenuInicialActivity extends AppCompatActivity {
                 titulo.setText(R.string.menu_escanear);
                 break;
             case R.id.nav_favoritos:
-                fragment = new FavoritosFragment();
+                fragment = new FavoritosView();
                 titulo.setText(R.string.menu_favoritos);
                 break;
             case R.id.nav_compartir:

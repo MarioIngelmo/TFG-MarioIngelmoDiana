@@ -16,24 +16,23 @@ import java.io.Serializable;
 public class Caracteristica implements Serializable {
 
     @SerializedName(value="id")
-    @NonNull
-    @PrimaryKey
-    private Long id;
+    @PrimaryKey(autoGenerate = true)
+    private Long caracteristicaId;
     @SerializedName(value="texto")
     @ColumnInfo(name = "texto")
     private String texto;
 
     public Caracteristica() {
-        this.id = 0L;
+        this.caracteristicaId = 0L;
     }
 
     @NonNull
-    public Long getId() {
-        return id;
+    public Long getCaracteristicaId() {
+        return caracteristicaId;
     }
 
-    public void setId(@NonNull Long id) {
-        this.id = id;
+    public void setCaracteristicaId(@NonNull Long id) {
+        this.caracteristicaId = id;
     }
 
     public String getTexto() {

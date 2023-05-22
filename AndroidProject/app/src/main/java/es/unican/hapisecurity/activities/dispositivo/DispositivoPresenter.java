@@ -2,6 +2,10 @@ package es.unican.hapisecurity.activities.dispositivo;
 
 import es.unican.hapisecurity.common.Caracteristica;
 import es.unican.hapisecurity.common.Dispositivo;
+import es.unican.hapisecurity.repository.db.DispositivoCaracteristicaNegativaSeguridad;
+import es.unican.hapisecurity.repository.db.DispositivoCaracteristicaNegativaSostenibilidad;
+import es.unican.hapisecurity.repository.db.DispositivoCaracteristicaPositivaSeguridad;
+import es.unican.hapisecurity.repository.db.DispositivoCaracteristicaPositivaSostenibilidad;
 import es.unican.hapisecurity.repository.db.DispositivosDB;
 import es.unican.hapisecurity.repository.db.IDispositivosDAO;
 
@@ -41,18 +45,18 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
     @Override
     public void anhadeOEliminaFavoritos() {
         IDispositivosDAO dao = db.dispositivosDAO();
-        if(dao.getDispositivoById(dispositivo.getId()) == null) {
-            dao.insertAll(dispositivo);
+        if (dao.getDispositivoById(dispositivo.getDispositivoId()) == null) {
+            anhadeDB(dao, dispositivo);
             view.siEstaDB();
         } else {
-            dao.eliminaDispositivo(dispositivo.getId());
+            dao.eliminaDispositivo(dispositivo.getDispositivoId());
             view.noEstaDB();
         }
     }
 
     private void compruebaDB() {
         IDispositivosDAO dao = db.dispositivosDAO();
-        if(dao.getDispositivoById(dispositivo.getId()) == null) {
+        if (dao.getDispositivoById(dispositivo.getDispositivoId()) == null) {
             view.noEstaDB();
         } else {
             view.siEstaDB();
@@ -124,7 +128,7 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
 
     private String getDescripcion() {
         String descripcion = "No hay descripcion disponible";
-        if(!dispositivo.getDescripcion().isEmpty()) {
+        if (!dispositivo.getDescripcion().isEmpty()) {
             descripcion = dispositivo.getDescripcion();
         }
         return descripcion;
@@ -132,9 +136,9 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
 
     private String getPosSeg() {
         String posSeg = "No hay caracteristicas positivas de seguridad";
-        if(!dispositivo.getListaPositivaSeguridad().isEmpty()) {
+        if (!dispositivo.getListaPositivaSeguridad().isEmpty()) {
             StringBuilder posSegTexto = new StringBuilder();
-            for (Caracteristica c: dispositivo.getListaPositivaSeguridad()) {
+            for (Caracteristica c : dispositivo.getListaPositivaSeguridad()) {
                 posSegTexto.append("\t- ").append(c.getTexto()).append("\n\n");
             }
             posSeg = posSegTexto.toString();
@@ -148,9 +152,9 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
 
     private String getNegSeg() {
         String negSeg = "No hay caracteristicas negativas de seguridad";
-        if(!dispositivo.getListaNegativaSeguridad().isEmpty()) {
+        if (!dispositivo.getListaNegativaSeguridad().isEmpty()) {
             StringBuilder negSegTexto = new StringBuilder();
-            for (Caracteristica c: dispositivo.getListaNegativaSeguridad()) {
+            for (Caracteristica c : dispositivo.getListaNegativaSeguridad()) {
                 negSegTexto.append("\t- ").append(c.getTexto()).append("\n\n");
             }
             negSeg = negSegTexto.toString();
@@ -164,9 +168,9 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
 
     private String getPosSost() {
         String posSost = "No hay caracteristicas positivas de sostenibilidad";
-        if(!dispositivo.getListaPositivaSostenibilidad().isEmpty()) {
+        if (!dispositivo.getListaPositivaSostenibilidad().isEmpty()) {
             StringBuilder posSostTexto = new StringBuilder();
-            for (Caracteristica c: dispositivo.getListaPositivaSostenibilidad()) {
+            for (Caracteristica c : dispositivo.getListaPositivaSostenibilidad()) {
                 posSostTexto.append("\t- ").append(c.getTexto()).append("\n\n");
             }
             posSost = posSostTexto.toString();
@@ -180,9 +184,9 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
 
     private String getNegSost() {
         String negSost = "No hay caracteristicas negativas de sostenibilidad";
-        if(!dispositivo.getListaNegativaSostenibilidad().isEmpty()) {
+        if (!dispositivo.getListaNegativaSostenibilidad().isEmpty()) {
             StringBuilder negSostTexto = new StringBuilder();
-            for (Caracteristica c: dispositivo.getListaNegativaSostenibilidad()) {
+            for (Caracteristica c : dispositivo.getListaNegativaSostenibilidad()) {
                 negSostTexto.append("\t- ").append(c.getTexto()).append("\n\n");
             }
             negSost = negSostTexto.toString();
@@ -192,6 +196,38 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
             }
         }
         return negSost;
+    }
+
+    private void anhadeDB(IDispositivosDAO dao, Dispositivo dispositivo) {
+        dao.insertDispositivo(dispositivo);
+        for (Caracteristica c: dispositivo.getListaPositivaSeguridad()) {
+            dao.insertCaracteristica(c);
+            DispositivoCaracteristicaPositivaSeguridad carac = new DispositivoCaracteristicaPositivaSeguridad();
+            carac.setDispositivoId(dispositivo.getDispositivoId());
+            carac.setCaracteristicaId(c.getCaracteristicaId());
+            dao.insertPositivaSeguridad(carac);
+        }
+        for (Caracteristica c: dispositivo.getListaNegativaSeguridad()) {
+            dao.insertCaracteristica(c);
+            DispositivoCaracteristicaNegativaSeguridad carac = new DispositivoCaracteristicaNegativaSeguridad();
+            carac.setDispositivoId(dispositivo.getDispositivoId());
+            carac.setCaracteristicaId(c.getCaracteristicaId());
+            dao.insertNegativaSeguridad(carac);
+        }
+        for (Caracteristica c: dispositivo.getListaPositivaSostenibilidad()) {
+            dao.insertCaracteristica(c);
+            DispositivoCaracteristicaPositivaSostenibilidad carac = new DispositivoCaracteristicaPositivaSostenibilidad();
+            carac.setDispositivoId(dispositivo.getDispositivoId());
+            carac.setCaracteristicaId(c.getCaracteristicaId());
+            dao.insertPositivaSostenibilidad(carac);
+        }
+        for (Caracteristica c: dispositivo.getListaNegativaSostenibilidad()) {
+            dao.insertCaracteristica(c);
+            DispositivoCaracteristicaNegativaSostenibilidad carac = new DispositivoCaracteristicaNegativaSostenibilidad();
+            carac.setDispositivoId(dispositivo.getDispositivoId());
+            carac.setCaracteristicaId(c.getCaracteristicaId());
+            dao.insertNegativaSostenibilidad(carac);
+        }
     }
 
 }

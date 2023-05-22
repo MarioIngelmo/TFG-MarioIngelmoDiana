@@ -3,7 +3,6 @@ package es.unican.hapisecurity.activities.dispositivo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,9 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import androidx.room.Room;
-
 import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
 
 import es.unican.hapisecurity.R;
 import es.unican.hapisecurity.common.Dispositivo;
@@ -30,17 +29,17 @@ public class DispositivoView extends AppCompatActivity implements IDispositivoCo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dispositivo_detalle);
         Dispositivo dispositivo = (Dispositivo) getIntent().getExtras().getSerializable(DISPOSITIVO);
-        DispositivosDB db = Room.databaseBuilder(getApplicationContext(), DispositivosDB.class, "dispositivos_db")
-                .allowMainThreadQueries().build();
+        DispositivosDB db = DispositivosDB.getDB(getApplicationContext());
         this.presenter = new DispositivoPresenter(this, dispositivo, db);
         this.init();
+        presenter.init();
     }
 
     @Override
     public void init() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Dispositivo");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Dispositivo");
         Drawable flechaAtras = ContextCompat.getDrawable(this, R.drawable.ic_flecha_atras);
         getSupportActionBar().setHomeAsUpIndicator(flechaAtras);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -68,9 +67,8 @@ public class DispositivoView extends AppCompatActivity implements IDispositivoCo
                                       String negSeg, String posSost, String negSost) {
 
         ImageView ivImagen = findViewById(R.id.ivRotulo);
-        String direccionImagen = url;
-        if (direccionImagen != null && !direccionImagen.isEmpty()) {
-            Picasso.get().load(direccionImagen).resize(350,350).into(ivImagen);
+        if (url != null && !url.isEmpty()) {
+            Picasso.get().load(url).resize(350,350).into(ivImagen);
         }
         TextView tvNombre = findViewById(R.id.tvNombreDispositivo);
         TextView tvMarca = findViewById(R.id.tvMarcaDispositivo);

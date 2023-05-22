@@ -5,13 +5,13 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.TypeConverters;
 
 import es.unican.hapisecurity.common.Caracteristica;
 import es.unican.hapisecurity.common.Dispositivo;
 
-@Database(entities = {Dispositivo.class, Caracteristica.class}, version = 1, exportSchema = false)
-@TypeConverters(AdapterDB.class)
+@Database(entities = {Dispositivo.class, Caracteristica.class, DispositivoCaracteristicaPositivaSeguridad.class,
+        DispositivoCaracteristicaNegativaSeguridad.class, DispositivoCaracteristicaPositivaSostenibilidad.class,
+        DispositivoCaracteristicaNegativaSostenibilidad.class}, version = 1, exportSchema = false)
 public abstract class DispositivosDB extends RoomDatabase {
 
     public static final String NOMBRE_DB = "dispositivos_db";
@@ -34,4 +34,5 @@ public abstract class DispositivosDB extends RoomDatabase {
     }
 
     public abstract IDispositivosDAO dispositivosDAO();
+
 }

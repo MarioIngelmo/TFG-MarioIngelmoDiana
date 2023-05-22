@@ -7,11 +7,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+
 import com.google.android.material.navigation.NavigationView;
+
 import es.unican.hapisecurity.R;
 import es.unican.hapisecurity.common.GlobalState;
 
-public class FavoritosFragment extends Fragment {
+public class FavoritosView extends Fragment implements IFavoritosContract.View {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,11 +24,12 @@ public class FavoritosFragment extends Fragment {
         // Selecciono el indice para remarcar en el menú lateral
         int selectedMenuIndex = GlobalState.getInstance().getSelectedMenuIndex();
         // Resaltar el ítem correspondiente en el menú lateral
-        NavigationView navigationView = getActivity().findViewById(R.id.navigation_view);
+        NavigationView navigationView = requireActivity().findViewById(R.id.navigation_view);
         navigationView.setCheckedItem(selectedMenuIndex);
 
         TextView textFavoritos = view.findViewById(R.id.tvErrorFavoritos);
-        textFavoritos.setText("Todavia no hay dispositivos favoritos agregados");
+        String textoSinFavoritos = "Todavia no hay dispositivos favoritos agregados";
+        textFavoritos.setText(textoSinFavoritos);
 
         return view;
     }

@@ -2,8 +2,8 @@ package es.unican.hapisecurity.common;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
-import androidx.room.Embedded;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
@@ -20,7 +20,7 @@ public class Dispositivo implements Serializable {
     @SerializedName(value="id")
     @NonNull
     @PrimaryKey
-    private String id;
+    private String dispositivoId;
     @SerializedName(value="urlImagen")
     @ColumnInfo(name = "urlImagen")
     private String urlImagen;
@@ -46,29 +46,29 @@ public class Dispositivo implements Serializable {
     @ColumnInfo(name = "sostenibilidad")
     private String sostenibilidad;
     @SerializedName(value="listaPositivaSeguridad")
-    @Embedded
+    @Ignore
     private List<Caracteristica> listaPositivaSeguridad;
     @SerializedName(value="listaNegativaSeguridad")
-    @Embedded
+    @Ignore
     private List<Caracteristica> listaNegativaSeguridad;
     @SerializedName(value="listaPositivaSostenibilidad")
-    @Embedded
+    @Ignore
     private List<Caracteristica> listaPositivaSostenibilidad;
     @SerializedName(value="listaNegativaSostenibilidad")
-    @Embedded
+    @Ignore
     private List<Caracteristica> listaNegativaSostenibilidad;
 
     public Dispositivo() {
-        this.id = "";
+        this.dispositivoId = "";
     }
 
     @NonNull
-    public String getId() {
-        return id;
+    public String getDispositivoId() {
+        return dispositivoId;
     }
 
-    public void setId(@NonNull String id) {
-        this.id = id;
+    public void setDispositivoId(@NonNull String id) {
+        this.dispositivoId = id;
     }
 
     public String getUrlImagen() {
