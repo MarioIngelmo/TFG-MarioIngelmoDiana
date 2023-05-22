@@ -4,6 +4,10 @@ public interface IDispositivoContract {
 
     interface View {
 
+        /**
+         * Metodo que se encarga de inicializar la activity y de dar funcionalidad a la imagen
+         * de la estrella (funciona como botón de favoritos)
+         */
         void init();
 
         /**
@@ -25,8 +29,14 @@ public interface IDispositivoContract {
                                    String seguridad, String sostenibilidad, String descripcion, String posSeg,
                                    String negSeg, String posSost, String negSost);
 
+        /**
+         * Metodo que muestra la estrella sin marcar si el dispositivo no está en la base de datos
+         */
         void noEstaDB();
 
+        /**
+         * Metodo que muestra la estrella marcada si el dispositivo está en la base de datos
+         */
         void siEstaDB();
     }
 
@@ -38,6 +48,10 @@ public interface IDispositivoContract {
          */
         void init();
 
+        /**
+         * Metodo que se llama al pinchar sobre la estrella y añade o elimina el dispositivo
+         * dependiendo de si está o no en la base de datos
+         */
         void anhadeOEliminaFavoritos();
     }
 }

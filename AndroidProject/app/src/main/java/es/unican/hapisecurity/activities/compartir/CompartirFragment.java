@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.navigation.NavigationView;
+
 import es.unican.hapisecurity.R;
 import es.unican.hapisecurity.common.GlobalState;
 
@@ -22,7 +23,7 @@ public class CompartirFragment extends Fragment {
         // Selecciono el indice para remarcar en el menú lateral
         int selectedMenuIndex = GlobalState.getInstance().getSelectedMenuIndex();
         // Resaltar el ítem correspondiente en el menú lateral
-        NavigationView navigationView = getActivity().findViewById(R.id.navigation_view);
+        NavigationView navigationView = requireActivity().findViewById(R.id.navigation_view);
         navigationView.setCheckedItem(selectedMenuIndex);
 
         // Doy funcionalidad al boton de compartir

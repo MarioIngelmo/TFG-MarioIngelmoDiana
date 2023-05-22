@@ -13,12 +13,12 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
 
     private final Dispositivo dispositivo;
     private final IDispositivoContract.View view;
-    private final DispositivosDB db;
+    private final IDispositivosDAO dao;
 
     public DispositivoPresenter(IDispositivoContract.View view, Dispositivo d, DispositivosDB db) {
         this.view = view;
         this.dispositivo = d;
-        this.db = db;
+        this.dao = db.dispositivosDAO();
     }
 
     @Override
@@ -44,7 +44,6 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
 
     @Override
     public void anhadeOEliminaFavoritos() {
-        IDispositivosDAO dao = db.dispositivosDAO();
         if (dao.getDispositivoById(dispositivo.getDispositivoId()) == null) {
             anhadeDB(dao, dispositivo);
             view.siEstaDB();
@@ -55,7 +54,6 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
     }
 
     private void compruebaDB() {
-        IDispositivosDAO dao = db.dispositivosDAO();
         if (dao.getDispositivoById(dispositivo.getDispositivoId()) == null) {
             view.noEstaDB();
         } else {
