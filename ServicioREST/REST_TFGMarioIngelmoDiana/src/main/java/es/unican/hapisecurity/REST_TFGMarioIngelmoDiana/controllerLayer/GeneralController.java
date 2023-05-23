@@ -2,6 +2,7 @@ package es.unican.hapisecurity.REST_TFGMarioIngelmoDiana.controllerLayer;
 
 import java.net.URI;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -103,12 +104,14 @@ public class GeneralController {
 	}
 
 	@GetMapping("/dispositivos/{id}")
-	public ResponseEntity<Dispositivo> getDispositivo(@PathVariable String id) {
+	public ResponseEntity<ListaDispositivos> getDispositivo(@PathVariable String id) {
 		Dispositivo d = servicio.dispositivoPorId(id);
 		if (d == null) {
 			return ResponseEntity.notFound().build();
 		}
-		return ResponseEntity.ok(d);
+		List<Dispositivo> dispositivos = new LinkedList<Dispositivo>();
+		dispositivos.add(d);
+		return ResponseEntity.ok(new ListaDispositivos(dispositivos));
 	}
 
 	@PutMapping("/dispositivos/{id}")

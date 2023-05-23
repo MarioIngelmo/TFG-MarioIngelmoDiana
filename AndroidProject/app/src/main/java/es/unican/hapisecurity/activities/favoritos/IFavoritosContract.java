@@ -15,6 +15,10 @@ public interface IFavoritosContract {
          */
         void init();
 
+        /**
+         * Metodo para crear y mandarle al presenter un repositorio de dispositivos nuevo
+         * @return el repositorio de dispositivos para poder hacer las llamadas
+         */
         IDispositivosRepository getRepositorioDispositivos();
 
         /**

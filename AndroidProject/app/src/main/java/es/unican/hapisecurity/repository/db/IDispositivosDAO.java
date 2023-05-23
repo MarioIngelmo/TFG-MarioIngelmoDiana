@@ -34,13 +34,25 @@ public interface IDispositivosDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertPositivaSeguridad(DispositivoCaracteristicaPositivaSeguridad positivaSeguridad);
 
+    @Query("DELETE FROM dispositivo_caracteristica_positiva_seguridad where dispositivoId = :id")
+    void eliminaPositivaSeguridad(String id);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertNegativaSeguridad(DispositivoCaracteristicaNegativaSeguridad negativaSeguridad);
+
+    @Query("DELETE FROM dispositivo_caracteristica_negativa_seguridad where dispositivoId = :id")
+    void eliminaNegativaSeguridad(String id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertPositivaSostenibilidad(DispositivoCaracteristicaPositivaSostenibilidad positivaSostenibilidad);
 
+    @Query("DELETE FROM dispositivo_caracteristica_positiva_sostenibilidad where dispositivoId = :id")
+    void eliminaPositivaSostenibilidad(String id);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertNegativaSostenibilidad(DispositivoCaracteristicaNegativaSostenibilidad negativaSostenibilidad);
+
+    @Query("DELETE FROM dispositivo_caracteristica_negativa_sostenibilidad where dispositivoId = :id")
+    void eliminaNegativaSostenibilidad(String id);
 
 }

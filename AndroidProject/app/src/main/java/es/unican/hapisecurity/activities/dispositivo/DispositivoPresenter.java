@@ -1,11 +1,8 @@
 package es.unican.hapisecurity.activities.dispositivo;
 
+import es.unican.hapisecurity.repository.db.AuxiliarDB;
 import es.unican.hapisecurity.common.Caracteristica;
 import es.unican.hapisecurity.common.Dispositivo;
-import es.unican.hapisecurity.repository.db.DispositivoCaracteristicaNegativaSeguridad;
-import es.unican.hapisecurity.repository.db.DispositivoCaracteristicaNegativaSostenibilidad;
-import es.unican.hapisecurity.repository.db.DispositivoCaracteristicaPositivaSeguridad;
-import es.unican.hapisecurity.repository.db.DispositivoCaracteristicaPositivaSostenibilidad;
 import es.unican.hapisecurity.repository.db.DispositivosDB;
 import es.unican.hapisecurity.repository.db.IDispositivosDAO;
 
@@ -45,7 +42,7 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
     @Override
     public void anhadeOEliminaFavoritos() {
         if (dao.getDispositivoById(dispositivo.getDispositivoId()) == null) {
-            anhadeDB(dao, dispositivo);
+            AuxiliarDB.anhadeDB(dao, dispositivo);
             view.siEstaDB();
         } else {
             dao.eliminaDispositivo(dispositivo.getDispositivoId());
@@ -194,38 +191,6 @@ public class DispositivoPresenter implements IDispositivoContract.Presenter {
             }
         }
         return negSost;
-    }
-
-    private void anhadeDB(IDispositivosDAO dao, Dispositivo dispositivo) {
-        dao.insertDispositivo(dispositivo);
-        for (Caracteristica c: dispositivo.getListaPositivaSeguridad()) {
-            dao.insertCaracteristica(c);
-            DispositivoCaracteristicaPositivaSeguridad carac = new DispositivoCaracteristicaPositivaSeguridad();
-            carac.setDispositivoId(dispositivo.getDispositivoId());
-            carac.setCaracteristicaId(c.getCaracteristicaId());
-            dao.insertPositivaSeguridad(carac);
-        }
-        for (Caracteristica c: dispositivo.getListaNegativaSeguridad()) {
-            dao.insertCaracteristica(c);
-            DispositivoCaracteristicaNegativaSeguridad carac = new DispositivoCaracteristicaNegativaSeguridad();
-            carac.setDispositivoId(dispositivo.getDispositivoId());
-            carac.setCaracteristicaId(c.getCaracteristicaId());
-            dao.insertNegativaSeguridad(carac);
-        }
-        for (Caracteristica c: dispositivo.getListaPositivaSostenibilidad()) {
-            dao.insertCaracteristica(c);
-            DispositivoCaracteristicaPositivaSostenibilidad carac = new DispositivoCaracteristicaPositivaSostenibilidad();
-            carac.setDispositivoId(dispositivo.getDispositivoId());
-            carac.setCaracteristicaId(c.getCaracteristicaId());
-            dao.insertPositivaSostenibilidad(carac);
-        }
-        for (Caracteristica c: dispositivo.getListaNegativaSostenibilidad()) {
-            dao.insertCaracteristica(c);
-            DispositivoCaracteristicaNegativaSostenibilidad carac = new DispositivoCaracteristicaNegativaSostenibilidad();
-            carac.setDispositivoId(dispositivo.getDispositivoId());
-            carac.setCaracteristicaId(c.getCaracteristicaId());
-            dao.insertNegativaSostenibilidad(carac);
-        }
     }
 
 }
