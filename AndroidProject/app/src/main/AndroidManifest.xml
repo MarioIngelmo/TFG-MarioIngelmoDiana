@@ -21,11 +21,11 @@
         <activity
             android:name=".activities.dispositivo.DispositivoView"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".activities.menu_lateral.MenuInicialActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

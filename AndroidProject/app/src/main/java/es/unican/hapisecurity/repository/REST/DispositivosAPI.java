@@ -9,7 +9,6 @@ import retrofit2.http.Query;
 /**
  * Dispositivos API access using Retrofit
  * Se utiliza Retrofit para la conexion con el servicio REST desarrollado
- * API: //TODO
  */
 public interface DispositivosAPI {
 

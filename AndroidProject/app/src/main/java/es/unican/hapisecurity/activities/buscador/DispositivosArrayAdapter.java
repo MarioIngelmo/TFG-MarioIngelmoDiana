@@ -57,7 +57,7 @@ public class DispositivosArrayAdapter extends ArrayAdapter<Dispositivo> {
         ImageView ivImagen = convertView.findViewById(R.id.ivFotoDisp);
         String direccionImagen = dispositivo.getUrlImagen();
         if (direccionImagen != null && !direccionImagen.isEmpty()) {
-            Picasso.get().load(direccionImagen).resize(100,100).into(ivImagen);
+            Picasso.get().load(direccionImagen).into(ivImagen);
         }
     }
 

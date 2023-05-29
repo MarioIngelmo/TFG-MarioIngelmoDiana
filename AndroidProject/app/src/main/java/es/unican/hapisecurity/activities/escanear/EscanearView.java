@@ -81,8 +81,6 @@ public class EscanearView extends Fragment implements DecoratedBarcodeView.Torch
             public void barcodeResult(BarcodeResult result) {
                 String codigoBarras = result.getText();
                 presenter.getDispositivo(codigoBarras);
-                // Detiene la lectura
-                onPause();
             }
 
             @Override
@@ -99,20 +97,19 @@ public class EscanearView extends Fragment implements DecoratedBarcodeView.Torch
 
     @Override
     public void showErrorRed() {
-        onResume();
         String text = "No se ha podido cargar el dispositivo por falta de red";
         Toast.makeText(this.getContext(), text, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void showErrorServidor() {
-        onResume();
         String text = "El dispositivo no existe o no se ha podido cargar";
         Toast.makeText(this.getContext(), text, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void openDispositivo(Dispositivo dispositivoMostrar) {
+        onPause();
         Intent intent = new Intent(this.getContext(), DispositivoView.class);
         intent.putExtra(DispositivoView.DISPOSITIVO, dispositivoMostrar);
         startActivity(intent);
