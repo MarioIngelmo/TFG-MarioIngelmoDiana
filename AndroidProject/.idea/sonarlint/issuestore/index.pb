@@ -3,8 +3,6 @@ R
 "app/src/main/res/values/dimens.xml,c\3\c3c1811dec2dbad2deeafb9aad505ca9631da740
 m
 =app/src/main/java/es/unican/hapisecurity/common/Callback.java,c\3\c350f3dc5455a163df319c80f440c7e5a10c6eca
-z
-Japp/src/main/java/es/unican/hapisecurity/repository/REST/CallRunnable.java,b\3\b378288622c937d0497c51c6f9d241b7c5e4d2f8
 }
 Mapp/src/main/java/es/unican/hapisecurity/repository/REST/CallbackAdapter.java,2\5\2514250a67b25664d549899d1b892b2ab55bc9b5
 @
@@ -19,18 +17,12 @@ h
 8app/src/main/java/es/unican/hapisecurity/common/Red.java,8\6\8630eaa238c6ce45a8845f70f5fd28cdcac4acd3
 p
 @app/src/main/java/es/unican/hapisecurity/common/GlobalState.java,8\4\84678fa3396202eb6d93f9aa06f9bdf84d74b55d
-â
-Yapp/src/main/java/es/unican/hapisecurity/activities/menu_lateral/MenuInicialActivity.java,d\3\d3fb10474fbfbc0a3803121402a1c844b1e5f018
 n
 >app/src/main/java/es/unican/hapisecurity/common/Categoria.java,e\4\e4db527c6ec33d2455827cf8ef11d302917dca77
 Ñ
 Tapp/src/main/java/es/unican/hapisecurity/activities/compartir/CompartirFragment.java,7\0\70511b835484d88971fb91c36f84faa86683eb8b
-É
-Sapp/src/main/java/es/unican/hapisecurity/activities/buscador/BuscadorPresenter.java,4\4\4489aa073a9bf476141a0edba7f9d1eed7196b06
 p
 @app/src/main/java/es/unican/hapisecurity/common/Dispositivo.java,1\2\1230ccb820d39d9a2bc2d08df6d20bb3f135e577
-â
-Yapp/src/main/java/es/unican/hapisecurity/repository/db/DispositivoConCaracteristicas.java,b\0\b00969e7b6f7a7ae27b9afdec27f0ad0c3874f6b
 ñ
 fapp/src/main/java/es/unican/hapisecurity/repository/db/DispositivoCaracteristicaPositivaSeguridad.java,5\2\52e1b3e5fdc7378db3339e78c4f7d42f47f5c70d
 ñ
@@ -41,8 +33,6 @@ kapp/src/main/java/es/unican/hapisecurity/repository/db/DispositivoCaracteristic
 Yapp/src/main/java/es/unican/hapisecurity/activities/dispositivo/DispositivoPresenter.java,8\5\8561d6705b16a5847ffd838045ee3ec9df94edd1
 Ä
 Papp/src/main/java/es/unican/hapisecurity/activities/favoritos/FavoritosView.java,c\1\c1d54da65b037196a3d23b66b6176f62743d6a95
-v
-Fapp/src/main/java/es/unican/hapisecurity/repository/db/AuxiliarDB.java,8\5\85af8f793f00afdd9d44f13446901c5efd7df900
 y
 Iapp/src/main/java/es/unican/hapisecurity/common/DispositivosResponse.java,0\d\0decd5ec838a879678126d6ae6d27f4bc4cebc5d
 Ö
@@ -71,8 +61,6 @@ Papp/src/main/java/es/unican/hapisecurity/repository/IDispositivosRepository.jav
 Zapp/src/main/java/es/unican/hapisecurity/repository/REST/DispositivosServiceConstants.java,0\f\0fc4bda2ed91375767b20e57ecdc4308b05c0206
 }
 Mapp/src/main/java/es/unican/hapisecurity/repository/REST/DispositivosAPI.java,d\4\d41c8d4bb20f4d91bc506d56e98525dcc262bace
-Å
-Qapp/src/main/java/es/unican/hapisecurity/repository/REST/DispositivosService.java,c\9\c95bcc5f463fb48fe345baccff6ab20db25c6778
 É
 Sapp/src/main/java/es/unican/hapisecurity/activities/buscador/IBuscadorContract.java,0\b\0b75b7a3445df7dcc7fc1a9ecfe60c9a1cfd99dd
 â
@@ -81,5 +69,3 @@ Yapp/src/main/java/es/unican/hapisecurity/activities/dispositivo/IDispositivoCon
 Sapp/src/main/java/es/unican/hapisecurity/activities/escanear/IEscanearContract.java,b\8\b84962e8153314c7aecdb4342296ce6ab857de0c
 Ö
 Uapp/src/main/java/es/unican/hapisecurity/activities/favoritos/IFavoritosContract.java,9\b\9bf5e51f89ce64b957967a2f1c5e6ac58f417403
-Ñ
-Tapp/src/main/java/es/unican/hapisecurity/activities/dispositivo/DispositivoView.java,2\f\2f7d3e52c7d919e84471fbe7c91ec11b2807a9e0

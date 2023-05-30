@@ -1,4 +1,4 @@
-package es.unican.hapisecurity.repository.REST;
+package es.unican.hapisecurity.repository.rest;
 
 import android.util.Log;
 

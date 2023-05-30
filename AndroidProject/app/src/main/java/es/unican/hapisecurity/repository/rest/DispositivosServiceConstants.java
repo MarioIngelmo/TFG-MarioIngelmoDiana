@@ -1,4 +1,4 @@
-package es.unican.hapisecurity.repository.REST;
+package es.unican.hapisecurity.repository.rest;
 
 /**
  * Clase para definir la API_URL Base del servicio al que se quiere llamar

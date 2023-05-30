@@ -1,4 +1,4 @@
-package es.unican.hapisecurity.repository.REST;
+package es.unican.hapisecurity.repository.rest;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -19,12 +19,11 @@ public class DispositivosService {
     private static DispositivosAPI api;
 
     private static String textoAPIURLAntiguo = null;
-    private static String textoAPIURL = null;
 
     private DispositivosService() {}
 
     private static DispositivosAPI getAPI() {
-        textoAPIURL = DispositivosServiceConstants.getAPIURL();
+        String textoAPIURL = DispositivosServiceConstants.getAPIURL();
         if (api == null || !textoAPIURLAntiguo.equals(textoAPIURL)) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(DispositivosServiceConstants.getAPIURL())

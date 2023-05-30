@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 import es.unican.hapisecurity.common.Dispositivo;
 import es.unican.hapisecurity.repository.IDispositivosRepository;
@@ -82,7 +83,7 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
         if (dispositivosMostrados != null && !dispositivosMostrados.isEmpty()) {
             List<Dispositivo> dispositivosTexto = new LinkedList<>();
             for (Dispositivo d : dispositivosMostrados) {
-                if (d.getNombre().toLowerCase().contains(textoBuscar.toLowerCase()) || d.getMarca().toLowerCase().contains(textoBuscar.toLowerCase())) {
+                if (d.getNombre().toLowerCase(Locale.ROOT).contains(textoBuscar.toLowerCase(Locale.ROOT)) || d.getMarca().toLowerCase(Locale.ROOT).contains(textoBuscar.toLowerCase(Locale.ROOT))) {
                     dispositivosTexto.add(d);
                 }
             }

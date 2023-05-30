@@ -5,7 +5,7 @@ import java.util.List;
 
 import es.unican.hapisecurity.common.Dispositivo;
 import es.unican.hapisecurity.common.DispositivosResponse;
-import es.unican.hapisecurity.repository.REST.DispositivosService;
+import es.unican.hapisecurity.repository.rest.DispositivosService;
 
 /**
  * Implementación del repositorio del servicio de dispositivos

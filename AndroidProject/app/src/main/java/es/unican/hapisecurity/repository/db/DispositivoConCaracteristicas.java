@@ -33,7 +33,9 @@ public class DispositivoConCaracteristicas {
             associateBy = @Junction(DispositivoCaracteristicaNegativaSostenibilidad.class))
     private List<Caracteristica> negativasSostenibilidad;
 
-    public DispositivoConCaracteristicas() {}
+    public DispositivoConCaracteristicas() {
+        // Constructor vacio
+    }
 
     public Dispositivo getDispositivo() {
         return dispositivo;

@@ -5,6 +5,10 @@ import es.unican.hapisecurity.common.Dispositivo;
 
 public class AuxiliarDB {
 
+    private AuxiliarDB() {
+        // Constructor vacio
+    }
+
     public static void anhadeDB(IDispositivosDAO dao, Dispositivo dispositivo) {
         dao.insertDispositivo(dispositivo);
         for (Caracteristica c: dispositivo.getListaPositivaSeguridad()) {

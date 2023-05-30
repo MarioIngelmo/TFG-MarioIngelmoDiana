@@ -1,4 +1,4 @@
-package es.unican.hapisecurity.repository.REST;
+package es.unican.hapisecurity.repository.rest;
 
 import es.unican.hapisecurity.common.DispositivosResponse;
 import retrofit2.Call;
