@@ -9,7 +9,7 @@ public class DispositivosServiceConstants {
             "http://51.137.100.222:8080/";
 
     private static final String PRUEBAS_URL =
-            "https://github.com/MarioIngelmo/TFG-MarioIngelmoDiana/tree/c060abe4140c692e0fa9341d6d93eb29d850f7b1/StaticREST/";
+            "https://github.com/MarioIngelmo/TFG-MarioIngelmoDiana/tree/b2579809d7c1f70cb6076890732fcf9c586a8382/StaticREST/1/";
 
     private DispositivosServiceConstants() {}
 
