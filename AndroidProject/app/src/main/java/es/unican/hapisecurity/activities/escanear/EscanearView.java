@@ -37,6 +37,8 @@ public class EscanearView extends Fragment implements DecoratedBarcodeView.Torch
 
     private View view;
 
+    private static boolean pruebas = false;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -61,12 +63,15 @@ public class EscanearView extends Fragment implements DecoratedBarcodeView.Torch
         NavigationView navigationView = requireActivity().findViewById(R.id.navigation_view);
         navigationView.setCheckedItem(selectedMenuIndex);
 
-        // Compruebo que tenga los permisos de la cámara y sino los solicito para poder utilizarla
-        if (androidx.core.content.ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED && androidx.core.content.ContextCompat.checkSelfPermission(requireContext(),
-                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            String[] permisos = {Manifest.permission.CAMERA};
-            ActivityCompat.requestPermissions(requireActivity(), permisos, 0);
+        // Si estoy haciendo pruebas me lo salto
+        if (!pruebas) {
+            // Compruebo que tenga los permisos de la cámara y sino los solicito para poder utilizarla
+            if (androidx.core.content.ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
+                    != PackageManager.PERMISSION_GRANTED && androidx.core.content.ContextCompat.checkSelfPermission(requireContext(),
+                    Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                String[] permisos = {Manifest.permission.CAMERA};
+                ActivityCompat.requestPermissions(requireActivity(), permisos, 0);
+            }
         }
 
         // Creo el Barcode Scanner y pongo un texto para guiar al usuario
@@ -141,6 +146,10 @@ public class EscanearView extends Fragment implements DecoratedBarcodeView.Torch
     @Override
     public void onTorchOff() {
         // Handle torch off event
+    }
+
+    public static void setPruebas(boolean p) {
+        pruebas = p;
     }
 
 }

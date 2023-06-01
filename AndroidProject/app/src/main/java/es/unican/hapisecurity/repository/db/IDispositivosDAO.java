@@ -22,6 +22,9 @@ public interface IDispositivosDAO {
     @Query("SELECT * FROM dispositivos where dispositivos.dispositivoId = :id")
     DispositivoConCaracteristicas getDispositivoById(String id);
 
+    @Query("DELETE FROM dispositivos")
+    void deleteAll();
+
     @Query("DELETE FROM dispositivos WHERE dispositivoId = :id")
     void eliminaDispositivo(String id);
 
