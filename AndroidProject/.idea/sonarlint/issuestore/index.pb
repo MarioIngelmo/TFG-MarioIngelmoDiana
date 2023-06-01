@@ -39,8 +39,6 @@ Lapp/src/main/java/es/unican/hapisecurity/repository/db/IDispositivosDAO.java,7
 Napp/src/main/java/es/unican/hapisecurity/activities/buscador/BuscadorView.java,1\6\164f7df992282d48e08db655add6b4be7e9f221c
 Š
 Zapp/src/main/java/es/unican/hapisecurity/activities/buscador/DispositivosArrayAdapter.java,5\f\5fdefd1fef6ad75e70279f5c019df7fc3faa1ebf
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 ~
 Napp/src/main/java/es/unican/hapisecurity/activities/escanear/EscanearView.java,2\5\25401f0da62000d8708b7957167f76cc6a3b13ea
 ƒ
@@ -61,8 +59,6 @@ Mapp/src/main/java/es/unican/hapisecurity/repository/REST/DispositivosAPI.java,
 Tapp/src/main/java/es/unican/hapisecurity/activities/dispositivo/DispositivoView.java,2\f\2f7d3e52c7d919e84471fbe7c91ec11b2807a9e0
 z
 Japp/src/main/java/es/unican/hapisecurity/repository/rest/CallRunnable.java,0\d\0df566d8c4ca00aba9f57b3a3da022a2f85b80e9
-‰
-Yapp/src/main/java/es/unican/hapisecurity/activities/menu_lateral/MenuInicialActivity.java,d\3\d3fb10474fbfbc0a3803121402a1c844b1e5f018
 }
 Mapp/src/main/java/es/unican/hapisecurity/repository/rest/CallbackAdapter.java,a\9\a92420ea96dae0a39a0a734adb421fa87de9c3b6
 ƒ
