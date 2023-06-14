@@ -3,7 +3,6 @@ package es.unican.hapisecurity.activities.buscador;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -34,15 +33,13 @@ import es.unican.hapisecurity.repository.rest.DispositivosServiceConstants;
 @Config(sdk = {Build.VERSION_CODES.O_MR1})
 public class BuscadorPresenterITest {
 
-    private static Context context;
-    private static IDispositivosRepository repositorio;
     private static IBuscadorContract.View view;
     private static IBuscadorContract.Presenter presenter;
 
     @Before
     public void inicializa() {
-        context = ApplicationProvider.getApplicationContext();
-        repositorio = new DispositivosRepository(context);
+        Context context = ApplicationProvider.getApplicationContext();
+        IDispositivosRepository repositorio = new DispositivosRepository(context);
 
         view = mock(IBuscadorContract.View.class);
         when(view.getRepositorioDispositivos()).thenReturn(repositorio);
