@@ -38,6 +38,9 @@ public class FavoritosUITest {
     public ActivityScenarioRule<MenuInicialActivity> activityRule =
             new ActivityScenarioRule(MenuInicialActivity.class);
 
+    /**
+     * Test donde se prueba que se añada y elimine correctamente de favoritos
+     */
     @Test
     public void pruebaFavoritosTest() {
         // Selecciono el primer dispositivo de la lista para añadir a favoritos

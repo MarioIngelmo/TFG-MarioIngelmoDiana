@@ -38,6 +38,9 @@ public class DispositivoUITest {
     public ActivityScenarioRule<MenuInicialActivity> activityRule =
             new ActivityScenarioRule(MenuInicialActivity.class);
 
+    /**
+     * Test donde se prueba que los datos del dispositivo son correctos al abrirlo
+     */
     @Test
     public void pruebaDetallesDispositivoTest() {
         // Selecciono el primer dispositivo de la lista para probar

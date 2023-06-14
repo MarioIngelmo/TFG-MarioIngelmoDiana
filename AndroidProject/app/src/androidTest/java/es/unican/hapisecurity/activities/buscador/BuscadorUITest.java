@@ -42,6 +42,9 @@ public class BuscadorUITest {
     public ActivityScenarioRule<MenuInicialActivity> activityRule =
             new ActivityScenarioRule(MenuInicialActivity.class);
 
+    /**
+     * Test para probar el buscador
+     */
     @Test
     public void pruebaBuscadorTest() {
         // Compruebo que se ha abierto el fragment buscador y que la lista tiene los dispositivos
@@ -72,6 +75,10 @@ public class BuscadorUITest {
                 .check(matches(withText("Amazon Echo")));
     }
 
+
+    /**
+     * Test para probar que los datos de la lista se ponen correctamente
+     */
     @Test
     public void pruebaDispositivoResumenTest() {
         // Compruebo que los datos del primer dispositivo son correctos

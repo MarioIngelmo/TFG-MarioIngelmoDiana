@@ -40,6 +40,9 @@ public class NavegacionMenuUITest {
     public ActivityScenarioRule<MenuInicialActivity> activityRule =
             new ActivityScenarioRule(MenuInicialActivity.class);
 
+    /**
+     * Test donde se comprueba que la navegacion funciona correctamente
+     */
     @Test
     public void pruebaNavegacionTest() {
         // Compruebo que el menú al principio esta cerrado

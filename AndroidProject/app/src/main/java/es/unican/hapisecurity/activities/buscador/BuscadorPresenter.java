@@ -18,6 +18,7 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
     private final IBuscadorContract.View view;
     private IDispositivosRepository repositorioDispositivos;
     private final Boolean red;
+    private List<Dispositivo> dispositivosOriginales;
     private List<Dispositivo> dispositivosMostrados;
 
     public BuscadorPresenter(IBuscadorContract.View view, String categoria, String seguridad, String sostenibilidad, String ordenar, Boolean red) {
@@ -80,9 +81,9 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
         if (textoBuscar.isBlank()) {
             obtenDispositivos(categoriaSeleccionada, String.valueOf(valorSeguridad), valorSostenibilidad, ordenarSeleccionado);
         }
-        if (dispositivosMostrados != null && !dispositivosMostrados.isEmpty()) {
+        if (dispositivosOriginales != null && !dispositivosOriginales.isEmpty()) {
             List<Dispositivo> dispositivosTexto = new LinkedList<>();
-            for (Dispositivo d : dispositivosMostrados) {
+            for (Dispositivo d : dispositivosOriginales) {
                 if (d.getNombre().toLowerCase(Locale.ROOT).contains(textoBuscar.toLowerCase(Locale.ROOT)) || d.getMarca().toLowerCase(Locale.ROOT).contains(textoBuscar.toLowerCase(Locale.ROOT))) {
                     dispositivosTexto.add(d);
                 }
@@ -96,6 +97,7 @@ public class BuscadorPresenter implements IBuscadorContract.Presenter {
         List<Dispositivo> dispositivosMostrar = repositorioDispositivos.getDispositivos(categoria, seguridad, sostenibilidad, ordenarSeleccionado);
         if (dispositivosMostrar != null) {
             dispositivosMostrados = dispositivosMostrar;
+            dispositivosOriginales = dispositivosMostrar;
             view.showDispositivos(dispositivosMostrar);
         } else {
             view.showErrorServidor();
