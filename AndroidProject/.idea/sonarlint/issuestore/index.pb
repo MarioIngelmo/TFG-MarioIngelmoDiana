@@ -75,8 +75,6 @@ Tapp/src/main/java/es/unican/hapisecurity/activities/dispositivo/DispositivoView
 Yapp/src/androidTest/java/es/unican/hapisecurity/activities/favoritos/FavoritosUITest.java,0\2\026d4bac642efe78f1af49d4ab13bd90e7696605
 ‘
 aapp/src/androidTest/java/es/unican/hapisecurity/activities/menu_lateral/NavegacionMenuUITest.java,e\3\e3a80acb456d29aa1ecd92481ec9e4d33d791947
-~
-Napp/src/main/java/es/unican/hapisecurity/activities/buscador/BuscadorView.java,1\6\164f7df992282d48e08db655add6b4be7e9f221c
 ‡
 Wapp/src/androidTest/java/es/unican/hapisecurity/activities/buscador/BuscadorUITest.java,f\e\fef909b8c2a613c5d36b048bafc58d5feea23708
 ƒ
@@ -105,3 +103,5 @@ Yapp/src/test/java/es/unican/hapisecurity/activities/favoritos/FavoritosPresente
 Zapp/src/test/java/es/unican/hapisecurity/activities/favoritos/FavoritosPresenterITest.java,a\a\aa8d55fc856d44e8ffcf9293e421330c0bec2bdc
 …
 Uapp/src/main/java/es/unican/hapisecurity/activities/favoritos/FavoritosPresenter.java,3\8\3892ca6b417b855e30077b2beeb9ed19a531f8cc
+~
+Napp/src/main/java/es/unican/hapisecurity/activities/buscador/BuscadorView.java,1\6\164f7df992282d48e08db655add6b4be7e9f221c

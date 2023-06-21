@@ -69,8 +69,6 @@ z
 Japp/src/main/java/es/unican/hapisecurity/repository/db/DispositivosDB.java,1\e\1e0407dc483d4d85c48c370a202b0c24472e6502
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-~
-Napp/src/main/java/es/unican/hapisecurity/activities/buscador/BuscadorView.java,1\6\164f7df992282d48e08db655add6b4be7e9f221c
 ç
 ]app/src/androidTest/java/es/unican/hapisecurity/activities/dispositivo/DispositivoUITest.java,f\3\f32d1cec95a8a3ed6facb8fc04e31279cd607625
 â
@@ -105,3 +103,5 @@ v
 Fapp/src/main/java/es/unican/hapisecurity/repository/db/AuxiliarDB.java,8\5\85af8f793f00afdd9d44f13446901c5efd7df900
 â
 Yapp/src/test/java/es/unican/hapisecurity/activities/favoritos/FavoritosPresenterTest.java,f\8\f8529b80236a79909909fc8fe31bc1cc0bc9a406
+~
+Napp/src/main/java/es/unican/hapisecurity/activities/buscador/BuscadorView.java,1\6\164f7df992282d48e08db655add6b4be7e9f221c
