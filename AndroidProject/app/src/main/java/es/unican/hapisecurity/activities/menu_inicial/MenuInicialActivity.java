@@ -1,4 +1,4 @@
-package es.unican.hapisecurity.activities.menu_lateral;
+package es.unican.hapisecurity.activities.menu_inicial;
 
 import android.os.Bundle;
 import android.view.KeyEvent;

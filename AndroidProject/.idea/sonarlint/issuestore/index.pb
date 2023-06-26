@@ -21,8 +21,6 @@ fapp/src/main/java/es/unican/hapisecurity/repository/db/DispositivoCaracteristic
 kapp/src/main/java/es/unican/hapisecurity/repository/db/DispositivoCaracteristicaPositivaSostenibilidad.java,4\5\450a858986c0de479f132ecc60a9a027e93fe8a5
 y
 Iapp/src/main/java/es/unican/hapisecurity/common/DispositivosResponse.java,0\d\0decd5ec838a879678126d6ae6d27f4bc4cebc5d
-ä
-Zapp/src/main/java/es/unican/hapisecurity/activities/buscador/DispositivosArrayAdapter.java,5\f\5fdefd1fef6ad75e70279f5c019df7fc3faa1ebf
 É
 Sapp/src/main/java/es/unican/hapisecurity/activities/escanear/EscanearPresenter.java,4\c\4cedfbd4d019e750db7bf4ca87f377656a162780
 
@@ -49,18 +47,10 @@ Sapp/src/main/java/es/unican/hapisecurity/activities/escanear/IEscanearContract.
 Uapp/src/main/java/es/unican/hapisecurity/activities/favoritos/IFavoritosContract.java,9\b\9bf5e51f89ce64b957967a2f1c5e6ac58f417403
 Å
 Qapp/src/main/java/es/unican/hapisecurity/repository/rest/DispositivosService.java,2\3\23c4db14579dc7808549e5ace41900b948bf4d3f
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-}
-Mapp/src/main/java/es/unican/hapisecurity/repository/rest/DispositivosAPI.java,9\7\97fa3299e45afab585b1f858af3b4a05e2287d15
 ä
 Zapp/src/main/java/es/unican/hapisecurity/repository/rest/DispositivosServiceConstants.java,8\7\875e8c997a2212a12e91cd5e19956a42ffb406f8
-â
-Yapp/src/main/java/es/unican/hapisecurity/activities/menu_lateral/MenuInicialActivity.java,d\3\d3fb10474fbfbc0a3803121402a1c844b1e5f018
 ~
 Napp/src/main/java/es/unican/hapisecurity/activities/escanear/EscanearView.java,2\5\25401f0da62000d8708b7957167f76cc6a3b13ea
-Ñ
-Tapp/src/main/java/es/unican/hapisecurity/activities/compartir/CompartirFragment.java,7\0\70511b835484d88971fb91c36f84faa86683eb8b
 v
 Fapp/src/androidTest/java/es/unican/hapisecurity/utilidad/Matchers.java,7\5\75c8ca8e378a1642669b09167eee5da54b0e0c30
 z
@@ -105,3 +95,15 @@ Zapp/src/test/java/es/unican/hapisecurity/activities/favoritos/FavoritosPresente
 Uapp/src/main/java/es/unican/hapisecurity/activities/favoritos/FavoritosPresenter.java,3\8\3892ca6b417b855e30077b2beeb9ed19a531f8cc
 ~
 Napp/src/main/java/es/unican/hapisecurity/activities/buscador/BuscadorView.java,1\6\164f7df992282d48e08db655add6b4be7e9f221c
+}
+Mapp/src/main/java/es/unican/hapisecurity/repository/rest/DispositivosAPI.java,9\7\97fa3299e45afab585b1f858af3b4a05e2287d15
+ä
+Zapp/src/main/java/es/unican/hapisecurity/activities/buscador/DispositivosArrayAdapter.java,5\f\5fdefd1fef6ad75e70279f5c019df7fc3faa1ebf
+Ñ
+Tapp/src/main/java/es/unican/hapisecurity/activities/compartir/CompartirFragment.java,7\0\70511b835484d88971fb91c36f84faa86683eb8b
+ë
+aapp/src/androidTest/java/es/unican/hapisecurity/activities/menu_inicial/NavegacionMenuUITest.java,b\7\b757117ec7db56f166e5e6da1ecf6aef676b213c
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+â
+Yapp/src/main/java/es/unican/hapisecurity/activities/menu_inicial/MenuInicialActivity.java,c\3\c313871cbe13bdc6128b622204aa103be834f521

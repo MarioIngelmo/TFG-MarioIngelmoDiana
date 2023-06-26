@@ -19,7 +19,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import es.unican.hapisecurity.R;
-import es.unican.hapisecurity.activities.menu_lateral.MenuInicialActivity;
+import es.unican.hapisecurity.activities.menu_inicial.MenuInicialActivity;
 import es.unican.hapisecurity.repository.rest.DispositivosServiceConstants;
 
 public class FavoritosUITest {

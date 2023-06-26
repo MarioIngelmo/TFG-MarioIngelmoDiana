@@ -1,4 +1,4 @@
-package es.unican.hapisecurity.activities.menu_lateral;
+package es.unican.hapisecurity.activities.menu_inicial;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;

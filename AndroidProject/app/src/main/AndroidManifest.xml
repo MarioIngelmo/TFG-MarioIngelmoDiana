@@ -23,7 +23,7 @@
             android:exported="false"
             android:configChanges="orientation|screenSize"/>
         <activity
-            android:name=".activities.menu_lateral.MenuInicialActivity"
+            android:name=".activities.menu_inicial.MenuInicialActivity"
             android:exported="true"
             android:configChanges="orientation|screenSize">
             <intent-filter>
