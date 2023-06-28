@@ -1,6 +1,3 @@
 
-n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯®û9
-y
-java:S1450"WRemove the "response" field and declare it as a local variable in the relevant methods.(²ùÏûÿÿÿÿ8ëª–é†1
-N
-java:S1068",Remove this unused "response" private field.(²ùÏûÿÿÿÿ8”«–é†1
+q
+java:S1104"TMake response a static final constant or non-public and provide accessors if needed.(Ùåô¹8İ²À1
