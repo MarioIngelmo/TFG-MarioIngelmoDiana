@@ -3,9 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="es.unican.hapisecurity">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,9 +19,13 @@
         android:theme="@style/Theme.HapiSecurity"
         tools:targetApi="33">
         <activity
-            android:name=".activities.menuLateral.MenuInicialActivity"
+            android:name=".activities.dispositivo.DispositivoView"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"/>
+        <activity
+            android:name=".activities.menu_inicial.MenuInicialActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

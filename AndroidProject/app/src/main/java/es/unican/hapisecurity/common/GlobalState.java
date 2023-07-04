@@ -1,7 +1,10 @@
 package es.unican.hapisecurity.common;
 
+/**
+ * Clase global para almacenar el índice del objeto del menú lateral seleccionado
+ */
 public class GlobalState {
-    private static GlobalState instance = new GlobalState();
+    private static final GlobalState instance = new GlobalState();
     private int mSelectedMenuIndex;
 
     private GlobalState() {
